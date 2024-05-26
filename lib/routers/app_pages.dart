@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:image_generator/routers/app_routes.dart';
-import 'package:image_generator/screen/home/home_screen.dart';
-import 'package:image_generator/screen/modules/chat/screen/home_chat_screen.dart';
-import 'package:image_generator/screen/modules/text_to_image/screen/result_tti_screen.dart';
-import 'package:image_generator/screen/modules/text_to_image/screen/home_tti_screen.dart';
-import 'package:image_generator/screen/modules/text_to_image/screen/more_art_style_screen.dart';
-import 'package:image_generator/screen/welcome/welcome_screen.dart';
+import 'package:rate_movie/routers/app_routes.dart';
+import 'package:rate_movie/screen/home/home_screen.dart';
+import 'package:rate_movie/screen/navibar/navibar_screen.dart';
+import 'package:rate_movie/screen/welcome/welcome_screen.dart';
 
 class AppPages {
   static Route? onGenerateRoute(RouteSettings settings) {
@@ -18,24 +15,11 @@ class AppPages {
         return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>
                 const WelcomeScreen());
-      case Routes.ttiHome:
+      case Routes.navibarCineX:
         return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>
-                const TTIHomeScreen());
-      case Routes.moreArtStyle:
-        return customPageRoute(
-            pageBuilder: (context, animation, secondaryAnimation) =>
-                const MoreArtStyleScreen());
-      case Routes.resultTTI:
-        return customPageRoute(
-            pageBuilder: (context, animation, secondaryAnimation) =>
-                const ResultTTIScreen());
+                const NavibarCineX());
 
-      //CHAT MODULES
-      case Routes.chatHome:
-        return customPageRoute(
-            pageBuilder: (context, animation, secondaryAnimation) =>
-                const ChatHomeScreen());
       default:
         return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>
