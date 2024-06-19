@@ -512,6 +512,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "widget_mask",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/widget_mask-1.0.0+0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "xml",
       "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/xml-6.5.0",
       "packageUri": "lib/",
@@ -530,7 +536,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-06-19T15:21:57.059602Z",
+  "generated": "2024-06-19T17:41:21.526539Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///Users/iaohtdev/fvm/versions/3.13.9",

@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^2.0.9
   loading_animation_widget: ^1.2.1
   readmore:
+  widget_mask: ^1.0.0+0
 
 
 dev_dependencies:

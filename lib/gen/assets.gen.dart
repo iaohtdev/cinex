@@ -33,6 +33,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/icon_search.svg
   String get iconSearch => 'assets/icons/icon_search.svg';
 
+  /// File path: assets/icons/icon_settings.svg
+  String get iconSettings => 'assets/icons/icon_settings.svg';
+
   /// File path: assets/icons/icon_user.svg
   String get iconUser => 'assets/icons/icon_user.svg';
 
@@ -45,6 +48,7 @@ class $AssetsIconsGen {
         iconMenu,
         iconNotification,
         iconSearch,
+        iconSettings,
         iconUser
       ];
 }
@@ -59,6 +63,17 @@ class $AssetsImagesGen {
   AssetGenImage get logoCinex =>
       const AssetGenImage('assets/images/logo_cinex.png');
 
+  /// File path: assets/images/mask.png
+  AssetGenImage get mask => const AssetGenImage('assets/images/mask.png');
+
+  /// File path: assets/images/mask_firstIndex.png
+  AssetGenImage get maskFirstIndex =>
+      const AssetGenImage('assets/images/mask_firstIndex.png');
+
+  /// File path: assets/images/mask_lastIndex.png
+  AssetGenImage get maskLastIndex =>
+      const AssetGenImage('assets/images/mask_lastIndex.png');
+
   /// File path: assets/images/poster_1.jpeg
   AssetGenImage get poster1 =>
       const AssetGenImage('assets/images/poster_1.jpeg');
@@ -71,8 +86,16 @@ class $AssetsImagesGen {
   AssetGenImage get welcome => const AssetGenImage('assets/images/welcome.png');
 
   /// List of all assets
-  List<dynamic> get values =>
-      [background, logoCinex, poster1, poster2, welcome];
+  List<dynamic> get values => [
+        background,
+        logoCinex,
+        mask,
+        maskFirstIndex,
+        maskLastIndex,
+        poster1,
+        poster2,
+        welcome
+      ];
 }
 
 class Assets {
@@ -83,9 +106,11 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(this._assetName, {this.size = null});
 
   final String _assetName;
+
+  final Size? size;
 
   Image image({
     Key? key,

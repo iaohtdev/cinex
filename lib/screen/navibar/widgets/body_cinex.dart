@@ -69,10 +69,10 @@ class _BodyCineXState extends State<BodyCineX> {
           ),
           BarItem(
             customButton: SvgPicture.asset(
-              Assets.icons.iconUser,
+              Assets.icons.iconSettings,
               color: Colors.white.withOpacity(0.4),
             ),
-            title: 'Tài Khoản',
+            title: 'Cài đặt',
           ),
         ],
       ),

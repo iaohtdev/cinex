@@ -50,5 +50,5 @@ customPageRoute(
             ).animate(animation),
             child: child,
           ),
-      transitionDuration: const Duration(milliseconds: 200));
+      transitionDuration: const Duration(milliseconds: 100));
 }

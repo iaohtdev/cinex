@@ -23,7 +23,7 @@ class HeaderMovie extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Hero(
-                    tag: 'dashs',
+                    tag: '0',
                     child: Image.asset(
                       Assets.images.poster1.path,
                       fit: BoxFit.cover,
