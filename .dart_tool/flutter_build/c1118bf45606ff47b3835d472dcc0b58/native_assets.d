@@ -1,0 +1,1 @@
+ /Users/iaohtdev/Work/flutter_project/cinex/.dart_tool/flutter_build/c1118bf45606ff47b3835d472dcc0b58/native_assets.yaml: 

@@ -46,4 +46,9 @@ class AppTextStyles {
     return TextStyle(
         fontFamily: AppTextStyles.fontBold, fontSize: 26, color: Colors.white);
   }
+
+  static TextStyle l3() {
+    return TextStyle(
+        fontFamily: AppTextStyles.fontBold, fontSize: 22, color: Colors.white);
+  }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rate_movie/routers/app_routes.dart';
 import 'package:rate_movie/screen/home/home_screen.dart';
+import 'package:rate_movie/screen/movie_detail/movie_detail_screen.dart';
 import 'package:rate_movie/screen/navibar/navibar_screen.dart';
 import 'package:rate_movie/screen/welcome/welcome_screen.dart';
 
@@ -19,7 +20,10 @@ class AppPages {
         return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>
                 const NavibarCineX());
-
+      case Routes.movieDetail:
+        return customPageRoute(
+            pageBuilder: (context, animation, secondaryAnimation) =>
+                const MovieDetail());
       default:
         return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>

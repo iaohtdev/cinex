@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rate_movie/gen/assets.gen.dart';
+import 'package:rate_movie/routers/app_routes.dart';
 import 'package:rate_movie/utils/components/app_constant.dart';
 import 'package:rate_movie/utils/style/app_color.dart';
 import 'package:rate_movie/utils/style/app_textstyle.dart';
@@ -27,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         padding:
             const EdgeInsets.symmetric(horizontal: AppConstants.pHorizontal),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Xem thông tin mọi bộ phim bạn muốn!',
@@ -63,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ),
             ),
             AppConstants.height20,
-            SizedBox(
+            Container(
               height: MediaQuery.sizeOf(context).height / 3,
               child: Column(
                 children: [
@@ -94,6 +96,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ),
                 ],
               ),
+            ),
+            AppConstants.height20,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '',
+                  style: AppTextStyles.l3(),
+                )
+              ],
             )
           ],
         ),
@@ -111,8 +123,54 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   ];
 
   List<Widget> lstTab = [
-    Container(
-      color: Colors.red,
+    ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: 5,
+      itemBuilder: (context, index) {
+        return GestureDetector(
+          onTap: () => Navigator.pushNamed(context, Routes.movieDetail),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.only(right: 25, top: 10),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(24),
+                    child: Image.asset(
+                      Assets.images.poster1.path,
+                      width: MediaQuery.sizeOf(context).width * 0.8,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              Text(
+                'My wife',
+                style: AppTextStyles.l3(),
+              ),
+              Row(
+                children: [
+                  Text(
+                    '3hr 40m 16s',
+                    style: AppTextStyles.textStyle(color: Colors.grey),
+                  ),
+                  AppConstants.width20,
+                  const Icon(
+                    Icons.star,
+                    color: Colors.yellow,
+                    size: 18,
+                  ),
+                  Text(
+                    '10/10',
+                    style: AppTextStyles.textStyle(color: Colors.grey),
+                  ),
+                ],
+              )
+            ],
+          ),
+        );
+      },
     ),
     Container(
       color: Colors.green,

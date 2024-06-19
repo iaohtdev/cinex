@@ -12,6 +12,9 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/icon_arrow_left.svg
+  String get iconArrowLeft => 'assets/icons/icon_arrow_left.svg';
+
   /// File path: assets/icons/icon_bookmark.svg
   String get iconBookmark => 'assets/icons/icon_bookmark.svg';
 
@@ -35,6 +38,7 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<String> get values => [
+        iconArrowLeft,
         iconBookmark,
         iconChat,
         iconHome,
@@ -55,11 +59,20 @@ class $AssetsImagesGen {
   AssetGenImage get logoCinex =>
       const AssetGenImage('assets/images/logo_cinex.png');
 
+  /// File path: assets/images/poster_1.jpeg
+  AssetGenImage get poster1 =>
+      const AssetGenImage('assets/images/poster_1.jpeg');
+
+  /// File path: assets/images/poster_2.JPG
+  AssetGenImage get poster2 =>
+      const AssetGenImage('assets/images/poster_2.JPG');
+
   /// File path: assets/images/welcome.png
   AssetGenImage get welcome => const AssetGenImage('assets/images/welcome.png');
 
   /// List of all assets
-  List<dynamic> get values => [background, logoCinex, welcome];
+  List<dynamic> get values =>
+      [background, logoCinex, poster1, poster2, welcome];
 }
 
 class Assets {
