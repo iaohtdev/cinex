@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rate_movie/screen/navibar/widgets/body_cinex.dart';
-import 'package:rate_movie/utils/components/app_appbar.dart';
+import 'package:cinex/screen/navibar/widgets/body_cinex.dart';
+import 'package:cinex/utils/components/app_appbar.dart';
 
 class NavibarCineX extends StatefulWidget {
   const NavibarCineX({super.key});

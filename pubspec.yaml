@@ -1,4 +1,4 @@
-name: rate_movie
+name: cinex
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -38,7 +38,13 @@ dependencies:
   flutter_svg: ^2.0.9
   loading_animation_widget: ^1.2.1
   readmore:
-  widget_mask: ^1.0.0+0
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
+  dio: ^5.4.3+1
+  equatable: ^2.0.5
+  cached_network_image: ^3.3.1
+  intl: ^0.19.0
+  shimmer: ^3.0.0
 
 
 dev_dependencies:

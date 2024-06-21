@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:rate_movie/gen/assets.gen.dart';
-import 'package:rate_movie/screen/home/home_screen.dart';
-import 'package:rate_movie/utils/components/app_constant.dart';
-import 'package:rate_movie/utils/style/app_color.dart';
-import 'package:rate_movie/utils/widgets/custom_bottom_bar.dart';
+import 'package:cinex/gen/assets.gen.dart';
+import 'package:cinex/screen/home/home_screen.dart';
+import 'package:cinex/utils/components/app_constant.dart';
+import 'package:cinex/utils/style/app_color.dart';
+import 'package:cinex/utils/widgets/custom_bottom_bar.dart';
 
 class BodyCineX extends StatefulWidget {
   const BodyCineX({

@@ -1,6 +1,6 @@
 {
-    "name": "rate_movie",
-    "short_name": "rate_movie",
+    "name": "cinex",
+    "short_name": "cinex",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

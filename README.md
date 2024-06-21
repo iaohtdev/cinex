@@ -1,4 +1,4 @@
-# rate_movie
+# cinex
 
 A new Flutter project.
 

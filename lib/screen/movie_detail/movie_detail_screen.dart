@@ -1,25 +1,37 @@
+import 'package:cinex/cubits/cubits.dart';
+import 'package:cinex/model/movie_model.dart';
+import 'package:cinex/utils/widgets/app_loading.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:rate_movie/gen/assets.gen.dart';
-import 'package:rate_movie/screen/movie_detail/widgets/header_widgets.dart';
-import 'package:rate_movie/screen/movie_detail/widgets/info_movie.dart';
-import 'package:rate_movie/utils/components/app_constant.dart';
-import 'package:rate_movie/utils/style/app_textstyle.dart';
+import 'package:cinex/gen/assets.gen.dart';
+import 'package:cinex/screen/movie_detail/widgets/header_widgets.dart';
+import 'package:cinex/screen/movie_detail/widgets/info_movie.dart';
+import 'package:cinex/utils/components/app_constant.dart';
+import 'package:cinex/utils/style/app_textstyle.dart';
 
-class MovieDetail extends StatefulWidget {
-  const MovieDetail({super.key});
+class MovieDetailScreen extends StatefulWidget {
+  const MovieDetailScreen({
+    super.key,
+    required this.movie,
+  });
+  final MovieModel movie;
 
   @override
-  State<MovieDetail> createState() => _MovieDetailState();
+  State<MovieDetailScreen> createState() => _MovieDetailScreenState();
 }
 
-class _MovieDetailState extends State<MovieDetail> {
+class _MovieDetailScreenState extends State<MovieDetailScreen> {
   final ScrollController _scrollController = ScrollController();
   bool _hasScrolledPastAppBar = false;
   final heightSliverAppbar = 220.0;
+
+  MovieModel get movie => widget.movie;
   @override
   void initState() {
     super.initState();
+    BlocProvider.of<DetailMovieCubit>(context).fetchDetail(movie.id ?? 0);
+
     _scrollController.addListener(_scrollListener);
   }
 
@@ -53,12 +65,33 @@ class _MovieDetailState extends State<MovieDetail> {
         automaticallyImplyLeading: false,
         actions: [_appbar(context)],
       ),
-      body: CustomScrollView(
-        controller: _scrollController,
-        slivers: const [
-          HeaderMovie(),
-          InfoMovie(),
-        ],
+      body: BlocBuilder<DetailMovieCubit, DetailMovieState>(
+        builder: (context, state) {
+          return CustomScrollView(
+            controller: _scrollController,
+            slivers: [
+              HeaderMovie(
+                movie: movie,
+              ),
+              if (state is DetailMoviesLoading)
+                const SliverFillRemaining(
+                  child: Center(
+                    child: AppLoading(),
+                  ),
+                ),
+              if (state is DetailMoviesLoaded) InfoMovie(state: state),
+              if (state is DetailMoviesError)
+                SliverFillRemaining(
+                  child: Center(
+                    child: Text(
+                      state.message,
+                      style: AppTextStyles.textStyle(),
+                    ),
+                  ),
+                ),
+            ],
+          );
+        },
       ),
     );
   }
@@ -82,7 +115,7 @@ class _MovieDetailState extends State<MovieDetail> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Text(
-                  'Avatar: The way of the Water',
+                  movie.title ?? '',
                   style: AppTextStyles.l3(),
                   overflow: TextOverflow.ellipsis,
                 ),

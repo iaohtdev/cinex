@@ -1,13 +1,16 @@
+import 'package:cinex/cubits/cubits.dart';
+import 'package:cinex/utils/widgets/app_shimmer.dart';
 import 'package:flutter/material.dart';
-import 'package:rate_movie/screen/home/widgets/movie_item.dart';
-import 'package:rate_movie/utils/components/app_constant.dart';
-import 'package:rate_movie/utils/style/app_color.dart';
-import 'package:rate_movie/utils/style/app_textstyle.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:cinex/model/models.dart';
+import 'package:cinex/utils/enum/genres_enum.dart';
+import 'package:cinex/screen/home/widgets/movie_item.dart';
+import 'package:cinex/utils/components/app_constant.dart';
+import 'package:cinex/utils/style/app_color.dart';
+import 'package:cinex/utils/style/app_textstyle.dart';
 
 class TypeMovie extends StatefulWidget {
-  const TypeMovie({
-    super.key,
-  });
+  const TypeMovie({super.key});
 
   @override
   State<TypeMovie> createState() => _TypeMovieState();
@@ -15,47 +18,27 @@ class TypeMovie extends StatefulWidget {
 
 class _TypeMovieState extends State<TypeMovie> with TickerProviderStateMixin {
   late TabController controller;
+  Map<GenresType, List<MovieModel>> movies = {};
+
   @override
   void initState() {
     super.initState();
-    controller = TabController(length: 6, vsync: this);
+    controller = TabController(length: GenresType.values.length, vsync: this);
+    controller.addListener(_handleTabSelection);
   }
 
-  List<String> titleTabar = [
-    'Hài hước',
-    'Trinh Thám',
-    'Viễn tưởng',
-    'Hài hước',
-    'Trinh Thám',
-    'Viễn tưởng',
-  ];
+  @override
+  void dispose() {
+    controller.removeListener(_handleTabSelection);
+    controller.dispose();
+    super.dispose();
+  }
 
-  List<Widget> lstTab = [
-    ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: 5,
-      itemBuilder: (context, index) {
-        return MovieItem(
-          index: index,
-        );
-      },
-    ),
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.yellow,
-    ),
-    Container(
-      color: Colors.red,
-    ),
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.yellow,
-    ),
-  ];
+  void _handleTabSelection() {
+    if (controller.indexIsChanging) {
+      setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,27 +47,52 @@ class _TypeMovieState extends State<TypeMovie> with TickerProviderStateMixin {
       child: Column(
         children: [
           TabBar(
-              controller: controller,
-              indicatorColor: AppColor.primaryColor,
-              tabAlignment: TabAlignment.start,
-              isScrollable: true,
-              indicatorPadding: const EdgeInsets.only(right: 20),
-              labelPadding: const EdgeInsets.only(right: 30),
-              dividerColor: Colors.transparent,
-              labelColor: AppColor.primaryColor,
-              unselectedLabelStyle: AppTextStyles.textStyle(fontSize: 16),
-              labelStyle: AppTextStyles.textStyleBold(fontSize: 16),
-              tabs: titleTabar
-                  .map((e) => Tab(
-                        height: 30,
-                        text: e,
-                      ))
-                  .toList()),
-          AppConstants.height10,
+            controller: controller,
+            indicatorColor: AppColor.primaryColor,
+            tabAlignment: TabAlignment.start,
+            isScrollable: true,
+            indicatorPadding: const EdgeInsets.only(right: 20),
+            labelPadding: const EdgeInsets.only(right: 30),
+            dividerColor: Colors.transparent,
+            labelColor: AppColor.primaryColor,
+            unselectedLabelStyle: AppTextStyles.textStyle(fontSize: 16),
+            labelStyle: AppTextStyles.textStyleBold(fontSize: 16),
+            tabs: GenresType.values
+                .map((e) => Tab(
+                      height: 30,
+                      text: e.name,
+                    ))
+                .toList(),
+          ),
+          AppConstants.height14,
           Expanded(
-            child: TabBarView(
-              controller: controller,
-              children: lstTab,
+            child: BlocBuilder<DiscoverCubit, DiscoverState>(
+              builder: (context, state) {
+                if (state is DiscoverLoading) {
+                  return const AppShimmer();
+                } else if (state is DiscoverTypeMovieLoaded) {
+                  movies = {
+                    GenresType.action: state.action,
+                    GenresType.adventure: state.adventure,
+                    GenresType.comedy: state.comedy,
+                    GenresType.horror: state.horror,
+                    GenresType.drama: state.drama,
+                    GenresType.thriller: state.thriller,
+                  };
+
+                  return TabBarView(
+                    controller: controller,
+                    children: GenresType.values.map(
+                      (e) {
+                        return MovieTabItem(
+                          lst: movies[e] ?? [],
+                        );
+                      },
+                    ).toList(),
+                  );
+                }
+                return AppShimmer();
+              },
             ),
           ),
         ],

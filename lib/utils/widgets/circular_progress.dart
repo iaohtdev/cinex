@@ -1,0 +1,57 @@
+import 'package:cinex/utils/style/app_color.dart';
+import 'package:cinex/utils/style/app_textstyle.dart';
+import 'package:flutter/material.dart';
+
+class CircularProgressWithPercentage extends StatelessWidget {
+  final int score;
+  final double? size;
+  const CircularProgressWithPercentage(
+      {Key? key, required this.score, this.size})
+      : super(key: key);
+
+  Color get colors {
+    if (score >= 70) {
+      return Colors.green;
+    } else if (score >= 50 && score < 70) {
+      return Colors.yellow.shade600;
+    } else {
+      return Colors.red;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    double progress = score / 100.0;
+
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(4),
+          decoration:
+              const BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+          child: SizedBox(
+            width: size ?? 30,
+            height: size ?? 30,
+            child: CircularProgressIndicator(
+              value: progress,
+              strokeWidth: 4.5,
+              valueColor: AlwaysStoppedAnimation<Color>(colors),
+              backgroundColor: AppColor.darkWhite,
+            ),
+          ),
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('$score', style: AppTextStyles.textStyle(fontSize: 12)),
+            Text('%',
+                style: AppTextStyles.textStyle(
+                  fontSize: 7,
+                )),
+          ],
+        )
+      ],
+    );
+  }
+}

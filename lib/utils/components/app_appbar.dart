@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:rate_movie/gen/assets.gen.dart';
-import 'package:rate_movie/utils/style/app_color.dart';
-import 'package:rate_movie/utils/style/app_textstyle.dart';
+import 'package:cinex/gen/assets.gen.dart';
+import 'package:cinex/utils/style/app_color.dart';
+import 'package:cinex/utils/style/app_textstyle.dart';
 
 class AppAppBar extends StatelessWidget implements PreferredSize {
   const AppAppBar({super.key, this.onTap});

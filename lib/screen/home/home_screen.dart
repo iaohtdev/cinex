@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:rate_movie/gen/assets.gen.dart';
-import 'package:rate_movie/screen/home/widgets/now_playing.dart';
-import 'package:rate_movie/screen/home/widgets/popular_movie.dart';
-import 'package:rate_movie/screen/home/widgets/type_movie.dart';
-import 'package:rate_movie/screen/home/widgets/upcoming_movie.dart';
-import 'package:rate_movie/utils/components/app_constant.dart';
-import 'package:rate_movie/utils/style/app_color.dart';
-import 'package:rate_movie/utils/style/app_textstyle.dart';
+import 'package:cinex/gen/assets.gen.dart';
+import 'package:cinex/screen/home/widgets/now_playing.dart';
+import 'package:cinex/screen/home/widgets/type_movie.dart';
+import 'package:cinex/screen/home/widgets/upcoming_movie.dart';
+import 'package:cinex/utils/components/app_constant.dart';
+import 'package:cinex/utils/style/app_color.dart';
+import 'package:cinex/utils/style/app_textstyle.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,7 +15,12 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -62,12 +66,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
             AppConstants.height20,
             const TypeMovie(),
-            AppConstants.height30,
+            AppConstants.height10,
             const NowPlayingMovie(),
-            AppConstants.height30,
             const UpcomingMovies(),
             AppConstants.height30,
-            const PopularMovies()
           ],
         ),
       ),

@@ -1,8 +1,10 @@
+import 'package:cinex/cubits/cubits.dart';
+import 'package:cinex/screen/home/widgets/movie_item.dart';
+import 'package:cinex/screen/home/widgets/shimmer_movie.dart';
 import 'package:flutter/material.dart';
-import 'package:rate_movie/gen/assets.gen.dart';
-import 'package:rate_movie/routers/app_routes.dart';
-import 'package:rate_movie/utils/components/app_constant.dart';
-import 'package:rate_movie/utils/style/app_textstyle.dart';
+import 'package:cinex/utils/components/app_constant.dart';
+import 'package:cinex/utils/style/app_textstyle.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class UpcomingMovies extends StatelessWidget {
   const UpcomingMovies({
@@ -11,42 +13,36 @@ class UpcomingMovies extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Phim sắp chiếu ',
-          style: AppTextStyles.l3(),
-        ),
-        AppConstants.height10,
-        SizedBox(
-          height: 180,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.only(right: 5),
-                child: Hero(
-                  tag: '$index',
-                  child: GestureDetector(
-                      onTap: () =>
-                          Navigator.pushNamed(context, Routes.movieDetail),
-                      child: Container(
-                        margin: const EdgeInsets.only(right: 20),
-                        width: 130,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage(Assets.images.poster1.path))),
-                      )),
+    return BlocBuilder<MoviesCubit, MoviesState>(
+      builder: (context, state) {
+        if (state is MoviesLoading) {
+          return const ShimmerMovie();
+        } else if (state is MoviesLoaded) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Phim sắp cập nhật ',
+                style: AppTextStyles.l3(),
+              ),
+              AppConstants.height10,
+              SizedBox(
+                height: 180,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: state.nowPlaying?.length,
+                  itemBuilder: (context, index) {
+                    return MovieItem(
+                      movie: state.upcoming![index],
+                    );
+                  },
                 ),
-              );
-            },
-          ),
-        )
-      ],
+              ),
+            ],
+          );
+        }
+        return Container();
+      },
     );
   }
 }
