@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		E7m/X61a8t9UL42hsEgW/TjY5I8=
+		isUp0AYiJgQv+4IXA3Tuww/yMds=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		kVVDE6Ext0N4aNeOJx3SA2HXLE8=
+		vWRstlQ1VGyjji6SXLdkJsD0dDg=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		KbmKeLKwwExsp56XEPAM4EPcO54=
+		93xEjJwCVhiAwQMSxZpKMLASqe4=
 		</data>
 		<key>flutter_assets/assets/fonts/Lexend-Bold.ttf</key>
 		<data>
@@ -76,6 +76,10 @@
 		<data>
 		CYUFx9HasYcKXjgpA2omecJjYDg=
 		</data>
+		<key>flutter_assets/assets/images/logo.png</key>
+		<data>
+		G+C2pRMy4UzjowyxKIIHI++70aQ=
+		</data>
 		<key>flutter_assets/assets/images/logo_cinex.png</key>
 		<data>
 		KRp8N2H1zugBAf56UgLAmhfHz7I=
@@ -102,7 +106,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		yCFng3gsHpQb1R3dNnthy88dj/k=
+		6UsE/w/ZxMnr1U7VdSHUBcv4et4=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -123,14 +127,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vDpSBu1kTkqrB+SztH3JC8laXccmw4Xr9b7U98pnZus=
+			FRBgJVon8cm3NVtSlpPR7Th03bk4e/shi4PXiI1cIm4=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			O8b0Am52nGswF0CEeEKyU0dOPzPtHfUYE3gRtCRkMVA=
+			V7lYvaR+N3rH3qw5tIymtvuNoF553YmT0DXpymjMAiM=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -144,7 +148,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1J+acenVBwJqHcG/EVjrCicPonUYNddlbCKQgrvyMVs=
+			dbifHvzcZ7vhbCezZNS/Ci+1NXbqZY5OYFwDDytCWTo=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/fonts/Lexend-Bold.ttf</key>
@@ -231,6 +235,13 @@
 			KLp7u84zep6mUXP7bujXjsK+i7skZ3MJR12YI7tdZEo=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/images/logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			P9jP+7sAacvKMcsOPMKKG6Tv9IUtzuTZTsk6Y32kFkM=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/images/logo_cinex.png</key>
 		<dict>
 			<key>hash2</key>
@@ -277,7 +288,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MO/IAJPouX/yPRcEUuGnvz1tPWjVtjR7Djysi6Vfy84=
+			R6CjXzWA/BrLCwHDKOb87b7zkglbDz8rIFkxIWKCUeI=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
