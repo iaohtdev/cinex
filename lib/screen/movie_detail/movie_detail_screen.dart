@@ -1,6 +1,6 @@
 import 'package:cinex/cubits/cubits.dart';
 import 'package:cinex/model/movie_model.dart';
-import 'package:cinex/utils/widgets/app_loading.dart';
+import 'package:cinex/utils/widgets/app_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -60,6 +60,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -73,12 +74,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
               HeaderMovie(
                 movie: movie,
               ),
-              if (state is DetailMoviesLoading)
-                const SliverFillRemaining(
-                  child: Center(
-                    child: AppLoading(),
-                  ),
-                ),
+              if (state is DetailMoviesLoading) _shimmer(width),
               if (state is DetailMoviesLoaded) InfoMovie(state: state),
               if (state is DetailMoviesError)
                 SliverFillRemaining(
@@ -92,6 +88,73 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
             ],
           );
         },
+      ),
+    );
+  }
+
+  SliverList _shimmer(double width) {
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (_, int index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(
+                horizontal: AppConstants.pHorizontal),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AppConstants.height30,
+                const AppShimmer(
+                  height: 20,
+                  width: double.infinity,
+                ),
+                AppConstants.height10,
+                AppShimmer(
+                  height: 20,
+                  width: width - 100,
+                ),
+                AppConstants.height14,
+                AppConstants.height14,
+                Row(
+                  children: [
+                    AppShimmer(
+                      height: 30,
+                      width: width / 2.5,
+                    ),
+                    AppConstants.width10,
+                    AppShimmer(
+                      height: 30,
+                      width: width / 2.5,
+                    ),
+                  ],
+                ),
+                AppConstants.height20,
+                AppShimmer(
+                  height: 120,
+                  width: width,
+                ),
+                AppConstants.height20,
+                SizedBox(
+                  height: 180,
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 3,
+                    itemBuilder: (context, index) {
+                      return const Padding(
+                        padding: EdgeInsets.only(right: 15),
+                        child: AppShimmer(
+                          height: 180,
+                          width: 130,
+                        ),
+                      );
+                    },
+                  ),
+                )
+              ],
+            ),
+          );
+        },
+        childCount: 1,
       ),
     );
   }

@@ -54,20 +54,7 @@ class _InfoMovieState extends State<InfoMovie> {
                 AppConstants.height20,
                 _option(),
                 AppConstants.height20,
-                ReadMoreText(
-                  movie?.overview ?? '',
-                  trimMode: TrimMode.Line,
-                  trimLines: 3,
-                  style: AppTextStyles.textStyle(
-                      color: Colors.white, fontSize: 16),
-                  trimCollapsedText: 'đọc thêm',
-                  trimExpandedText: ' thu gọn',
-                  moreStyle: AppTextStyles.textStyle(
-                      color: AppColor.primaryColor, fontSize: 16),
-                  lessStyle: AppTextStyles.textStyle(
-                      color: AppColor.primaryColor, fontSize: 16),
-                ),
-                AppConstants.height20,
+                if (movie?.overview != '') _des(),
                 _cast(),
                 AppConstants.height20,
                 _rcmMovies()
@@ -77,6 +64,26 @@ class _InfoMovieState extends State<InfoMovie> {
         },
         childCount: 1,
       ),
+    );
+  }
+
+  Column _des() {
+    return Column(
+      children: [
+        ReadMoreText(
+          movie?.overview ?? '',
+          trimMode: TrimMode.Line,
+          trimLines: 3,
+          style: AppTextStyles.textStyle(color: Colors.white, fontSize: 16),
+          trimCollapsedText: 'đọc thêm',
+          trimExpandedText: ' thu gọn',
+          moreStyle: AppTextStyles.textStyle(
+              color: AppColor.primaryColor, fontSize: 16),
+          lessStyle: AppTextStyles.textStyle(
+              color: AppColor.primaryColor, fontSize: 16),
+        ),
+        AppConstants.height20,
+      ],
     );
   }
 
@@ -178,12 +185,6 @@ class _InfoMovieState extends State<InfoMovie> {
                         style: AppTextStyles.textStyle(
                             color: Colors.grey, fontSize: 15))
                   ])),
-                  AppConstants.width20,
-                  const Icon(Icons.favorite, color: Colors.red, size: 18),
-                  Text(
-                    ' Yêu thích',
-                    style: AppTextStyles.textStyle(color: Colors.grey),
-                  ),
                 ],
               )
             ],

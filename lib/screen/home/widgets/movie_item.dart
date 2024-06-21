@@ -15,7 +15,8 @@ class MovieItem extends StatelessWidget {
   final MovieModel movie;
 
   int get rating => ((movie.voteAverage ?? 0) * 10).toInt();
-  int get idGenre => (movie.genreIds?.first) ?? 0;
+  int get idGenre =>
+      movie.genreIds!.isNotEmpty ? ((movie.genreIds?.first) ?? 18) : 18;
 
   @override
   Widget build(BuildContext context) {
