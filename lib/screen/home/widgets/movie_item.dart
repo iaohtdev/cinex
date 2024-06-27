@@ -78,7 +78,6 @@ class MovieTabItem extends StatelessWidget {
       itemBuilder: (context, index) {
         final item = lst[index];
         int rating = ((item.voteAverage ?? 0) * 10).toInt();
-        List lstGener = AppCommon.getGenreNamesByIds(item.genreIds ?? []);
         return Container(
           width: MediaQuery.sizeOf(context).width * 0.8,
           margin: const EdgeInsets.only(right: 20),
@@ -124,11 +123,21 @@ class MovieTabItem extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: AppTextStyles.textStyleBold(fontSize: 18),
                       ),
-                      Text(
-                        lstGener.join(','),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: AppTextStyles.textStyle(color: Colors.grey),
+                      AppConstants.height2,
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.calendar_month_outlined,
+                            color: Colors.grey,
+                            size: 16,
+                          ),
+                          AppConstants.width5,
+                          Text(
+                            AppCommon.formatDateVN(item.releaseDate),
+                            style: AppTextStyles.textStyle(color: Colors.grey),
+                          ),
+                        ],
                       )
                     ],
                   ),

@@ -1,5 +1,4 @@
 import 'package:cinex/cubits/cubits.dart';
-import 'package:cinex/cubits/movie/movies_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:cinex/routers/app_pages.dart';
 import 'package:cinex/routers/app_routes.dart';
@@ -25,6 +24,9 @@ class MyApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => DiscoverCubit()..fetchMoviesByGenre(),
+          ),
+          BlocProvider(
+            create: (context) => NaviBarCubit(),
           )
         ],
         child: MaterialApp(

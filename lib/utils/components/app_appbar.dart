@@ -1,3 +1,4 @@
+import 'package:cinex/utils/components/app_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cinex/gen/assets.gen.dart';
@@ -25,10 +26,20 @@ class AppAppBar extends StatelessWidget implements PreferredSize {
                 )
               ],
             ),
-            SvgPicture.asset(
-              Assets.icons.iconNotification,
-              color: Colors.white,
-              height: 25,
+            Row(
+              children: [
+                SvgPicture.asset(
+                  Assets.icons.iconNotification,
+                  color: Colors.white,
+                  height: 25,
+                ),
+                AppConstants.width10,
+                SvgPicture.asset(
+                  Assets.icons.iconSettings,
+                  color: Colors.white,
+                  height: 25,
+                ),
+              ],
             )
           ],
         ),

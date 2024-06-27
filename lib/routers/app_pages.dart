@@ -1,5 +1,6 @@
 import 'package:cinex/cubits/movie/movies_cubit.dart';
 import 'package:cinex/model/movie_model.dart';
+import 'package:cinex/screen/search/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cinex/routers/app_routes.dart';
 import 'package:cinex/screen/home/home_screen.dart';
@@ -36,7 +37,10 @@ class AppPages {
             movie: movie,
           );
         });
-
+      case Routes.search:
+        return customPageRoute(
+            pageBuilder: (context, animation, secondaryAnimation) =>
+                const SearchScreen());
       default:
         return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>

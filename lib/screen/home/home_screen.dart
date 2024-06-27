@@ -1,4 +1,6 @@
+import 'package:cinex/cubits/cubits.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cinex/gen/assets.gen.dart';
 import 'package:cinex/screen/home/widgets/now_playing.dart';
@@ -35,41 +37,46 @@ class _HomeScreenState extends State<HomeScreen> {
               style: AppTextStyles.l2(),
             ),
             AppConstants.height20,
-            Container(
-              padding:
-                  const EdgeInsets.only(left: 20, right: 3, top: 3, bottom: 3),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: AppColor.darkWhite,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Tìm kiếm',
-                    style: AppTextStyles.textStyle(
-                        fontSize: 14, color: Colors.grey),
-                  ),
-                  Container(
-                    height: 45,
-                    width: 45,
-                    padding: const EdgeInsets.all(13),
-                    decoration: const BoxDecoration(
-                        color: Colors.white, shape: BoxShape.circle),
-                    child: SvgPicture.asset(
-                      Assets.icons.iconSearch,
-                      color: AppColor.primaryColor,
-                    ),
-                  )
-                ],
-              ),
-            ),
+            _search(),
             AppConstants.height20,
             const TypeMovie(),
             AppConstants.height10,
             const NowPlayingMovie(),
             const UpcomingMovies(),
             AppConstants.height30,
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _search() {
+    return GestureDetector(
+      onTap: () => context.read<NaviBarCubit>().updateIndex(1),
+      child: Container(
+        padding: const EdgeInsets.only(left: 20, right: 3, top: 3, bottom: 3),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: AppColor.darkWhite,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Tìm kiếm',
+              style: AppTextStyles.textStyle(fontSize: 14, color: Colors.grey),
+            ),
+            Container(
+              height: 45,
+              width: 45,
+              padding: const EdgeInsets.all(13),
+              decoration: const BoxDecoration(
+                  color: Colors.white, shape: BoxShape.circle),
+              child: SvgPicture.asset(
+                Assets.icons.iconSearch,
+                color: AppColor.primaryColor,
+              ),
+            )
           ],
         ),
       ),
