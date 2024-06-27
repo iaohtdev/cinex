@@ -14,6 +14,9 @@ class _NavibarCineXState extends State<NavibarCineX>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppAppBar(), body: BodyCineX());
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        appBar: AppAppBar(),
+        body: BodyCineX());
   }
 }

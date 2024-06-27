@@ -6,4 +6,5 @@ class ApiConfig {
   static String credits = '/credits';
   static String genre = '/genre/movie/list';
   static String disover = '/discover/movie';
+  static String searchMutil = '/search/multi';
 }

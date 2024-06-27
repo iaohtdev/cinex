@@ -59,20 +59,12 @@ class $AssetsImagesGen {
   /// File path: assets/images/background.svg
   String get background => 'assets/images/background.svg';
 
+  /// File path: assets/images/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+
   /// File path: assets/images/logo_cinex.png
   AssetGenImage get logoCinex =>
       const AssetGenImage('assets/images/logo_cinex.png');
-
-  /// File path: assets/images/mask.png
-  AssetGenImage get mask => const AssetGenImage('assets/images/mask.png');
-
-  /// File path: assets/images/mask_firstIndex.png
-  AssetGenImage get maskFirstIndex =>
-      const AssetGenImage('assets/images/mask_firstIndex.png');
-
-  /// File path: assets/images/mask_lastIndex.png
-  AssetGenImage get maskLastIndex =>
-      const AssetGenImage('assets/images/mask_lastIndex.png');
 
   /// File path: assets/images/poster_1.jpeg
   AssetGenImage get poster1 =>
@@ -82,20 +74,15 @@ class $AssetsImagesGen {
   AssetGenImage get poster2 =>
       const AssetGenImage('assets/images/poster_2.JPG');
 
+  /// File path: assets/images/searching.svg
+  String get searching => 'assets/images/searching.svg';
+
   /// File path: assets/images/welcome.png
   AssetGenImage get welcome => const AssetGenImage('assets/images/welcome.png');
 
   /// List of all assets
-  List<dynamic> get values => [
-        background,
-        logoCinex,
-        mask,
-        maskFirstIndex,
-        maskLastIndex,
-        poster1,
-        poster2,
-        welcome
-      ];
+  List<dynamic> get values =>
+      [background, logo, logoCinex, poster1, poster2, searching, welcome];
 }
 
 class Assets {

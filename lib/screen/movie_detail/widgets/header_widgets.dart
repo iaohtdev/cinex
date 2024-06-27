@@ -25,8 +25,8 @@ class HeaderMovie extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child:
-                      ImageHelper.getNetworkImg(imageUrl: movie.backdropPath),
+                  child: ImageHelper.getNetworkImg(
+                      imageUrl: movie.backdropPath ?? movie.posterPath),
                 ),
               ),
             ),

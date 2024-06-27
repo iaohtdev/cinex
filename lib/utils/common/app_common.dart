@@ -7,10 +7,23 @@ class AppCommon {
     FocusManager.instance.primaryFocus?.unfocus();
   }
 
-  static String formatDateVN(String? dateString) {
-    DateTime dateTime = DateFormat('yyyy-MM-dd').parse(dateString ?? '');
+  static String formatDateVN(String dateString) {
+    if (dateString.isNotEmpty) {
+      DateTime dateTime = DateFormat('yyyy-MM-dd').parse(dateString);
 
-    return DateFormat('dd-MM-yyyy').format(dateTime);
+      return DateFormat('dd-MM-yyyy').format(dateTime);
+    } else {
+      return '01-01-2010';
+    }
+  }
+
+  static String formatYear(String dateString) {
+    if (dateString.isNotEmpty) {
+      DateTime dateTime = DateFormat('yyyy-MM-dd').parse(dateString);
+      return DateFormat('yyyy').format(dateTime);
+    } else {
+      return '2010';
+    }
   }
 
   static String formatTime(int minutes) {
@@ -25,15 +38,7 @@ class AppCommon {
 
   static String getGenreNameById(int id) {
     final genre = lstGenresFull.firstWhere((element) => element['id'] == id,
-        orElse: () => {"name": "Unknown"});
+        orElse: () => {"name": "Cảm xúc"});
     return genre['name'];
-  }
-
-  static List<String> getGenreNamesByIds(List<int> ids) {
-    return ids.map((id) {
-      final genre = lstGenresFull.firstWhere((element) => element['id'] == id,
-          orElse: () => {"name": "Unknown"});
-      return genre['name'] as String;
-    }).toList();
   }
 }

@@ -36,9 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
               'Xem thông tin mọi bộ phim bạn muốn!',
               style: AppTextStyles.l2(),
             ),
-            AppConstants.height20,
+            AppConstants.height30,
             _search(),
-            AppConstants.height20,
+            AppConstants.height30,
             const TypeMovie(),
             AppConstants.height10,
             const NowPlayingMovie(),
@@ -54,24 +54,27 @@ class _HomeScreenState extends State<HomeScreen> {
     return GestureDetector(
       onTap: () => context.read<NaviBarCubit>().updateIndex(1),
       child: Container(
-        padding: const EdgeInsets.only(left: 20, right: 3, top: 3, bottom: 3),
+        padding: const EdgeInsets.only(left: 20, right: 4, top: 4, bottom: 4),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(16),
           color: AppColor.darkWhite,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Tìm kiếm',
-              style: AppTextStyles.textStyle(fontSize: 14, color: Colors.grey),
+              'Tên phim, diễn viên, tv series...',
+              style: AppTextStyles.textStyle(
+                  fontSize: 14, color: AppColor.darkWhite),
             ),
             Container(
               height: 45,
               width: 45,
               padding: const EdgeInsets.all(13),
-              decoration: const BoxDecoration(
-                  color: Colors.white, shape: BoxShape.circle),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: SvgPicture.asset(
                 Assets.icons.iconSearch,
                 color: AppColor.primaryColor,

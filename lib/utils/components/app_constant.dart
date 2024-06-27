@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppConstants {
-  static const double pHorizontal = 12;
+  static const double pHorizontal = 16;
   static const height2 = SizedBox(height: 2);
   static const height4 = SizedBox(height: 4);
   static const height5 = SizedBox(height: 5);

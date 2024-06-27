@@ -9,7 +9,8 @@ class MovieRepository {
     final reponse = await DioService().get(ApiConfig.nowPlaying);
 
     for (var i in reponse.data['results']) {
-      lst.add(MovieModel.fromJson(i));
+      if (i['backdrop_path'] != null || i['poster_path'] != null)
+        lst.add(MovieModel.fromJson(i));
     }
 
     return lst;
@@ -21,7 +22,8 @@ class MovieRepository {
     final reponse = await DioService().get(ApiConfig.upcoming);
 
     for (var i in reponse.data['results']) {
-      lst.add(MovieModel.fromJson(i));
+      if (i['backdrop_path'] != null || i['poster_path'] != null)
+        lst.add(MovieModel.fromJson(i));
     }
 
     return lst;
@@ -43,7 +45,8 @@ class MovieRepository {
     final reponse = await DioService()
         .get('${ApiConfig.movie}/$id${ApiConfig.recommendations}');
     for (var i in reponse.data['results']) {
-      movies.add(MovieModel.fromJson(i));
+      if (i['backdrop_path'] != null || i['poster_path'] != null)
+        movies.add(MovieModel.fromJson(i));
     }
     return movies;
   }

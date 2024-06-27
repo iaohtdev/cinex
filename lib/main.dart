@@ -27,7 +27,10 @@ class MyApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => NaviBarCubit(),
-          )
+          ),
+          BlocProvider(
+            create: (context) => SearchCubit(),
+          ),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

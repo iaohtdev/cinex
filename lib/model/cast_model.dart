@@ -1,3 +1,5 @@
+import 'package:cinex/model/movie_model.dart';
+
 class CastModel {
   bool? adult;
   int? gender;
@@ -11,7 +13,7 @@ class CastModel {
   String? character;
   String? creditId;
   int? order;
-
+  List<MovieModel>? knownFor;
   CastModel(
       {this.adult,
       this.gender,
@@ -24,6 +26,7 @@ class CastModel {
       this.castId,
       this.character,
       this.creditId,
+      this.knownFor,
       this.order});
 
   CastModel.fromJson(Map<String, dynamic> json) {
@@ -39,6 +42,12 @@ class CastModel {
     character = json['character'];
     creditId = json['credit_id'];
     order = json['order'];
+    if (json['known_for'] != null) {
+      knownFor = <MovieModel>[];
+      json['known_for'].forEach((v) {
+        knownFor!.add(new MovieModel.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {

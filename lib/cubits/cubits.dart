@@ -5,3 +5,5 @@ export 'detail_movie/detail_movie_state.dart';
 export 'discover/discover_cubit.dart';
 export 'discover/discover_state.dart';
 export 'navibar/navibar_cubit.dart';
+export 'search/search_cubit.dart';
+export 'search/search_state.dart';

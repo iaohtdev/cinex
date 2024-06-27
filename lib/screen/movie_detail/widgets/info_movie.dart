@@ -57,7 +57,7 @@ class _InfoMovieState extends State<InfoMovie> {
                 if (movie?.overview != '') _des(),
                 _cast(),
                 AppConstants.height20,
-                _rcmMovies()
+                if (lstRcm.isNotEmpty) _rcmMovies()
               ],
             ),
           );
@@ -269,7 +269,13 @@ class _InfoMovieState extends State<InfoMovie> {
         ).toList()),
         AppConstants.height20,
         SizedBox(
-          height: idxSelected == 0 ? 130 : 70,
+          height: idxSelected == 0
+              ? casts.isNotEmpty
+                  ? 130
+                  : 0
+              : movie!.productionCompanies!.isNotEmpty
+                  ? 70
+                  : 0,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: idxSelected == 0

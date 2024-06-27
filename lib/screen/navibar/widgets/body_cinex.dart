@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:cinex/cubits/cubits.dart';
 import 'package:cinex/gen/assets.gen.dart';
 import 'package:cinex/screen/home/home_screen.dart';
+import 'package:cinex/screen/search/search_screen.dart';
 import 'package:cinex/utils/style/app_color.dart';
 import 'package:cinex/utils/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class _BodyCineXState extends State<BodyCineX> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(initialPage: 0);
+    _pageController = PageController(initialPage: 1);
     _naviBarCubit = context.read<NaviBarCubit>();
 
     cubitSubscription = _naviBarCubit.stream.listen((index) {
@@ -95,14 +96,7 @@ class _BodyCineXState extends State<BodyCineX> {
 
   List<Widget> lstPage = [
     const HomeScreen(),
-    Container(
-      alignment: Alignment.center,
-      child: const Icon(
-        Icons.search,
-        size: 56,
-        color: Colors.brown,
-      ),
-    ),
+    SearchScreen(),
     Container(
       alignment: Alignment.center,
       child: const Icon(

@@ -8,6 +8,7 @@ class MovieModel {
   String? homepage;
   int? id;
   String? imdbId;
+  String? mediaType;
   List<dynamic>? originCountry;
   String? originalLanguage;
   String? originalTitle;
@@ -41,6 +42,7 @@ class MovieModel {
       this.originalTitle,
       this.overview,
       this.popularity,
+      this.mediaType,
       this.posterPath,
       this.productionCompanies,
       this.productionCountries,
@@ -70,6 +72,7 @@ class MovieModel {
         genres!.add(Genres.fromJson(v));
       });
     }
+    mediaType = json['media_type'];
     homepage = json['homepage'];
     id = json['id'];
     imdbId = json['imdb_id'];
@@ -91,7 +94,10 @@ class MovieModel {
         productionCountries!.add(ProductionCountries.fromJson(v));
       });
     }
-    releaseDate = json['release_date'];
+    releaseDate = json['release_date'] == null
+        ? json['first_air_date']
+        : json['release_date'];
+
     revenue = json['revenue'];
     runtime = json['runtime'];
     if (json['spoken_languages'] != null) {
@@ -102,7 +108,7 @@ class MovieModel {
     }
     status = json['status'];
     tagline = json['tagline'];
-    title = json['title'];
+    title = json['title'] == null ? json['name'] : json['title'];
     video = json['video'];
     voteAverage = json['vote_average'];
     voteCount = json['vote_count'];

@@ -134,7 +134,7 @@ class MovieTabItem extends StatelessWidget {
                           ),
                           AppConstants.width5,
                           Text(
-                            AppCommon.formatDateVN(item.releaseDate),
+                            AppCommon.formatDateVN(item.releaseDate ?? ''),
                             style: AppTextStyles.textStyle(color: Colors.grey),
                           ),
                         ],

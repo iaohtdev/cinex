@@ -1,5 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cinex/gen/assets.gen.dart';
 import 'package:cinex/provider/tmdb.dart';
+import 'package:cinex/utils/style/app_color.dart';
 import 'package:flutter/material.dart';
 
 class ImageHelper {
@@ -12,12 +14,22 @@ class ImageHelper {
       Color? color,
       Widget? placeholder}) {
     return CachedNetworkImage(
-      imageUrl: TMDB.BASE_IMG + (imageUrl ?? ''),
-      fit: fit ?? BoxFit.cover,
-      color: color,
-      width: width,
-      placeholder: (context, url) => placeholder ?? Container(),
-      errorWidget: (context, url, error) => const Icon(Icons.error),
-    );
+        imageUrl: TMDB.BASE_IMG + (imageUrl ?? ''),
+        fit: fit ?? BoxFit.cover,
+        color: color,
+        width: width,
+        placeholder: (context, url) => placeholder ?? Container(),
+        errorWidget: (context, url, error) =>
+            errorWidget ??
+            Container(
+              width: double.infinity,
+              height: double.infinity,
+              color: AppColor.darkWhite,
+              padding: EdgeInsets.all(25),
+              child: Image.asset(
+                Assets.images.logoCinex.path,
+                color: Colors.grey,
+              ),
+            ));
   }
 }

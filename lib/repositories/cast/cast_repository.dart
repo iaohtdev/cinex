@@ -8,8 +8,9 @@ class CastRepository {
 
     final reponse =
         await DioService().get('${ApiConfig.movie}/$id${ApiConfig.credits}');
+
     for (var i in reponse.data['cast']) {
-      casts.add(CastModel.fromJson(i));
+      if (i['profile_path'] != null) casts.add(CastModel.fromJson(i));
     }
     return casts;
   }
