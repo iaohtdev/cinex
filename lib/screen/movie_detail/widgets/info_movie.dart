@@ -4,6 +4,7 @@ import 'package:cinex/model/movie_model.dart';
 import 'package:cinex/screen/home/widgets/movie_item.dart';
 import 'package:cinex/utils/common/app_common.dart';
 import 'package:cinex/utils/helper/image_helper.dart';
+import 'package:cinex/utils/widgets/circular_progress.dart';
 import 'package:flutter/material.dart';
 import 'package:cinex/utils/components/app_constant.dart';
 import 'package:cinex/utils/style/app_color.dart';
@@ -37,9 +38,8 @@ class _InfoMovieState extends State<InfoMovie> {
     return '';
   }
 
-  String get rating => (movie?.voteAverage ?? 0).toStringAsFixed(1);
   String get vote => '${movie?.voteCount ?? 0} votes';
-
+  int get rating => ((movie?.voteAverage ?? 0) * 10).toInt();
   @override
   Widget build(BuildContext context) {
     return SliverList(
@@ -120,13 +120,13 @@ class _InfoMovieState extends State<InfoMovie> {
           child: Row(
             children: [
               const Icon(
-                Icons.download,
-                size: 20,
+                Icons.share,
+                size: 18,
                 color: Colors.white,
               ),
               AppConstants.width2,
               Text(
-                'Tải xuống',
+                'Chia sẽ',
                 style:
                     AppTextStyles.textStyle(color: Colors.white, fontSize: 12),
               )
@@ -167,41 +167,15 @@ class _InfoMovieState extends State<InfoMovie> {
                 'Thể loại: $type',
                 style: AppTextStyles.textStyle(color: Colors.grey),
               ),
-              AppConstants.height5,
-              Row(
-                children: [
-                  const Icon(
-                    Icons.star,
-                    color: Colors.yellow,
-                    size: 18,
-                  ),
-                  RichText(
-                      text: TextSpan(children: [
-                    TextSpan(
-                        text: '$rating / ',
-                        style: AppTextStyles.textStyle(color: Colors.grey)),
-                    TextSpan(
-                        text: vote,
-                        style: AppTextStyles.textStyle(
-                            color: Colors.grey, fontSize: 15))
-                  ])),
-                ],
-              )
             ],
           ),
         ),
         AppConstants.width20,
-        Expanded(
-          flex: 2,
-          child: Container(
-            padding: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(
-                shape: BoxShape.circle, color: AppColor.primaryColor),
-            child: const Icon(
-              Icons.play_arrow,
-              size: 30,
-            ),
-          ),
+        CircularProgressWithPercentage(
+          score: rating,
+          size: 50,
+          textSize: 16,
+          strokeWidth: 7,
         )
       ],
     );

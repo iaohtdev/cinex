@@ -45,7 +45,7 @@ class _TrendingMovieState extends State<TrendingMovie>
                   AppConstants.width20,
                   Container(
                     width: 150,
-                    height: 35,
+                    height: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       border: Border.all(color: AppColor.primaryColor),

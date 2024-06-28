@@ -5,8 +5,15 @@ import 'package:flutter/material.dart';
 class CircularProgressWithPercentage extends StatelessWidget {
   final int score;
   final double? size;
+  final double? textSize;
+  final double? strokeWidth;
+
   const CircularProgressWithPercentage(
-      {Key? key, required this.score, this.size})
+      {Key? key,
+      required this.score,
+      this.size,
+      this.textSize,
+      this.strokeWidth})
       : super(key: key);
 
   Color get colors {
@@ -35,7 +42,7 @@ class CircularProgressWithPercentage extends StatelessWidget {
             height: size ?? 30,
             child: CircularProgressIndicator(
               value: progress,
-              strokeWidth: 4.5,
+              strokeWidth: strokeWidth ?? 4.5,
               valueColor: AlwaysStoppedAnimation<Color>(colors),
               backgroundColor: AppColor.darkWhite,
             ),
@@ -44,10 +51,11 @@ class CircularProgressWithPercentage extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('$score', style: AppTextStyles.textStyle(fontSize: 12)),
+            Text('$score',
+                style: AppTextStyles.textStyleBold(fontSize: textSize ?? 12)),
             Text('%',
-                style: AppTextStyles.textStyle(
-                  fontSize: 7,
+                style: AppTextStyles.textStyleBold(
+                  fontSize: textSize != null ? (textSize ?? 0) - 5 : 7,
                 )),
           ],
         )
