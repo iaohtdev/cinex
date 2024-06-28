@@ -2,6 +2,7 @@ import 'package:cinex/model/movie_model.dart';
 import 'package:cinex/utils/common/app_common.dart';
 import 'package:cinex/utils/helper/image_helper.dart';
 import 'package:cinex/utils/widgets/circular_progress.dart';
+import 'package:cinex/utils/widgets/stroke_text.dart';
 import 'package:flutter/material.dart';
 import 'package:cinex/routers/app_routes.dart';
 import 'package:cinex/utils/components/app_constant.dart';
@@ -14,7 +15,6 @@ class MovieItem extends StatelessWidget {
   });
   final MovieModel movie;
 
-  int get rating => ((movie.voteAverage ?? 0) * 10).toInt();
   int get idGenre =>
       movie.genreIds!.isNotEmpty ? ((movie.genreIds?.first) ?? 18) : 18;
 
@@ -147,6 +147,75 @@ class MovieTabItem extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class MovieItemWithRank extends StatelessWidget {
+  const MovieItemWithRank({
+    super.key,
+    required this.movie,
+    required this.index,
+  });
+  final MovieModel movie;
+  final int index;
+
+  int get idGenre =>
+      movie.genreIds!.isNotEmpty ? ((movie.genreIds?.first) ?? 18) : 18;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, Routes.movieDetail, arguments: {
+        'movie': movie,
+      }),
+      child: Container(
+        width: 150,
+        margin: EdgeInsets.only(right: 15),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Positioned(
+              right: 0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  width: 130,
+                  child: ImageHelper.getNetworkImg(
+                      imageUrl: movie.posterPath ?? '',
+                      placeholder: Container(
+                        color: Colors.grey,
+                      )),
+                ),
+              ),
+            ),
+            Positioned(
+                top: 2,
+                right: 2,
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.black.withOpacity(0.7),
+                  ),
+                  child: Text(
+                    AppCommon.getGenreNameById(idGenre),
+                    style: AppTextStyles.textStyle(fontSize: 10),
+                  ),
+                )),
+            Positioned(
+              bottom: -30,
+              child: StrokeText(
+                text: '${index + 1}',
+                textSize: 100,
+                strokeWidth: 3.5,
+                textColor: Color.fromARGB(255, 28, 28, 28),
+                strokeColor: Colors.white,
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

@@ -59,6 +59,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/background.svg
   String get background => 'assets/images/background.svg';
 
+  /// File path: assets/images/blur.svg
+  String get blur => 'assets/images/blur.svg';
+
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
@@ -82,7 +85,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<dynamic> get values =>
-      [background, logo, logoCinex, poster1, poster2, searching, welcome];
+      [background, blur, logo, logoCinex, poster1, poster2, searching, welcome];
 }
 
 class Assets {
