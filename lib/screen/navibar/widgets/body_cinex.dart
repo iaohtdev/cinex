@@ -26,7 +26,7 @@ class _BodyCineXState extends State<BodyCineX> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(initialPage: 1);
+    _pageController = PageController(initialPage: 0);
     _naviBarCubit = context.read<NaviBarCubit>();
 
     cubitSubscription = _naviBarCubit.stream.listen((index) {

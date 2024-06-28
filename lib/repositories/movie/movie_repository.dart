@@ -50,4 +50,25 @@ class MovieRepository {
     }
     return movies;
   }
+
+  static Future<Map<String, List<MovieModel>>> trending() async {
+    final dioService = DioService();
+
+    final responses = await Future.wait([
+      dioService.get(ApiConfig.trendingDay),
+      dioService.get(ApiConfig.trendingWeek),
+    ]);
+
+    List<MovieModel> trendingDays = (responses[0].data['results'] as List)
+        .map((item) => MovieModel.fromJson(item))
+        .toList();
+    List<MovieModel> trendingWeeks = (responses[1].data['results'] as List)
+        .map((item) => MovieModel.fromJson(item))
+        .toList();
+
+    return {
+      'day': trendingDays,
+      'week': trendingWeeks,
+    };
+  }
 }
