@@ -18,7 +18,7 @@ class TypeMovie extends StatefulWidget {
 
 class _TypeMovieState extends State<TypeMovie> with TickerProviderStateMixin {
   late TabController controller;
-  Map<GenresType, List<MovieModel>> movies = {};
+  Map<GenresType, List<MovieModel>?> movies = {};
 
   @override
   void initState() {
@@ -70,10 +70,10 @@ class _TypeMovieState extends State<TypeMovie> with TickerProviderStateMixin {
               builder: (context, state) {
                 if (state is DiscoverLoading) {
                   return const AppShimmer();
-                } else if (state is DiscoverTypeMovieLoaded) {
+                } else if (state is DiscoverLoaded) {
                   movies = {
                     GenresType.action: state.action,
-                    GenresType.adventure: state.adventure,
+                    GenresType.anime: state.anime,
                     GenresType.comedy: state.comedy,
                     GenresType.horror: state.horror,
                     GenresType.drama: state.drama,
@@ -91,7 +91,7 @@ class _TypeMovieState extends State<TypeMovie> with TickerProviderStateMixin {
                     ).toList(),
                   );
                 }
-                return AppShimmer();
+                return Container();
               },
             ),
           ),

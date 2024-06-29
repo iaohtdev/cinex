@@ -69,6 +69,10 @@ class $AssetsImagesGen {
   AssetGenImage get logoCinex =>
       const AssetGenImage('assets/images/logo_cinex.png');
 
+  /// File path: assets/images/logo_gif.gif
+  AssetGenImage get logoGif =>
+      const AssetGenImage('assets/images/logo_gif.gif');
+
   /// File path: assets/images/poster_1.jpeg
   AssetGenImage get poster1 =>
       const AssetGenImage('assets/images/poster_1.jpeg');
@@ -84,8 +88,17 @@ class $AssetsImagesGen {
   AssetGenImage get welcome => const AssetGenImage('assets/images/welcome.png');
 
   /// List of all assets
-  List<dynamic> get values =>
-      [background, blur, logo, logoCinex, poster1, poster2, searching, welcome];
+  List<dynamic> get values => [
+        background,
+        blur,
+        logo,
+        logoCinex,
+        logoGif,
+        poster1,
+        poster2,
+        searching,
+        welcome
+      ];
 }
 
 class Assets {

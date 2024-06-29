@@ -1,6 +1,8 @@
 enum GenresType {
   action,
-  adventure,
+  anime,
+
+  // adventure,
   comedy,
   horror,
   drama,
@@ -8,7 +10,8 @@ enum GenresType {
 
   String get name => switch (this) {
         action => 'Hành động',
-        adventure => 'Phiêu lưu',
+        anime => 'Hoạt hình',
+        // adventure => 'Phiêu lưu',
         comedy => 'Hài',
         horror => 'Kinh dị',
         drama => 'Chính kịch',
@@ -16,7 +19,8 @@ enum GenresType {
       };
   String get nameUS => switch (this) {
         action => 'Action',
-        adventure => 'Adventure',
+        anime => 'Animation',
+        // adventure => 'Adventure',
         comedy => 'Comedy',
         horror => 'Horror',
         drama => 'Drama',
@@ -24,7 +28,8 @@ enum GenresType {
       };
   int get id => switch (this) {
         action => 28,
-        adventure => 12,
+        // adventure => 12,
+        anime => 16,
         comedy => 35,
         horror => 27,
         drama => 18,

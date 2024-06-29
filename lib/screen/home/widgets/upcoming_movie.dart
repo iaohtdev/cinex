@@ -22,15 +22,15 @@ class UpcomingMovies extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Phim sắp cập nhật ',
+                'Phim sắp chiếu',
                 style: AppTextStyles.l3(),
               ),
-              AppConstants.height10,
+              AppConstants.height20,
               SizedBox(
                 height: 180,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: state.nowPlaying?.length,
+                  itemCount: state.upcoming?.length,
                   itemBuilder: (context, index) {
                     return MovieItem(
                       movie: state.upcoming![index],

@@ -3,10 +3,10 @@ import 'package:cinex/provider/api_config.dart';
 import 'package:cinex/service/dio_service.dart';
 
 class MovieRepository {
-  static Future<List<MovieModel>> fetchNowPlayingMovies() async {
+  static Future<List<MovieModel>> fetchTopRatedMovies() async {
     List<MovieModel> lst = [];
 
-    final reponse = await DioService().get(ApiConfig.nowPlaying);
+    final reponse = await DioService().get(ApiConfig.topRated);
 
     for (var i in reponse.data['results']) {
       if (i['backdrop_path'] != null || i['poster_path'] != null)
@@ -18,12 +18,29 @@ class MovieRepository {
 
   static Future<List<MovieModel>> fetchUpCommingMovies() async {
     List<MovieModel> lst = [];
+    int page = 1;
+    final now = DateTime.now();
 
-    final reponse = await DioService().get(ApiConfig.upcoming);
+    while (page <= 3) {
+      final response = await DioService().get(
+        ApiConfig.upcoming,
+        queryParameters: {'page': page},
+      );
 
-    for (var i in reponse.data['results']) {
-      if (i['backdrop_path'] != null || i['poster_path'] != null)
-        lst.add(MovieModel.fromJson(i));
+      if (response.data['results'].isEmpty) {
+        break;
+      }
+
+      for (var i in response.data['results']) {
+        if (i['backdrop_path'] != null || i['poster_path'] != null) {
+          final releaseDate = DateTime.parse(i['release_date']);
+          if (releaseDate.isAfter(now)) {
+            lst.add(MovieModel.fromJson(i));
+          }
+        }
+      }
+
+      page++;
     }
 
     return lst;
@@ -70,5 +87,16 @@ class MovieRepository {
       'day': trendingDays,
       'week': trendingWeeks,
     };
+  }
+
+  static Future<List<MovieModel>> trendingTVDay() async {
+    List<MovieModel> movies = [];
+
+    final reponse = await DioService().get(ApiConfig.trendingTvDay);
+    for (var i in reponse.data['results']) {
+      if (i['backdrop_path'] != null || i['poster_path'] != null)
+        movies.add(MovieModel.fromJson(i));
+    }
+    return movies;
   }
 }

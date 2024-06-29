@@ -1,11 +1,14 @@
 import 'package:cinex/cubits/cubits.dart';
+import 'package:cinex/screen/home/widgets/kr_movie_widget%20copy.dart';
+import 'package:cinex/screen/home/widgets/top_rate_widget.dart';
 import 'package:cinex/screen/home/widgets/trending_movie_widget.dart';
+import 'package:cinex/screen/home/widgets/tv_popular_widget.dart';
+import 'package:cinex/screen/home/widgets/vn_movie_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cinex/gen/assets.gen.dart';
 import 'package:cinex/screen/home/widgets/type_movie.dart';
-import 'package:cinex/screen/home/widgets/upcoming_movie.dart';
 import 'package:cinex/utils/components/app_constant.dart';
 import 'package:cinex/utils/style/app_color.dart';
 import 'package:cinex/utils/style/app_textstyle.dart';
@@ -36,12 +39,16 @@ class _HomeScreenState extends State<HomeScreen>
             _search(),
             AppConstants.height30,
             const TypeMovie(),
-            TrendingMovie(),
-            // AppConstants.height30,
-            // const NowPlayingMovie(),
-            AppConstants.height30,
-            const UpcomingMovies(),
-            AppConstants.height30,
+            Column(
+              children: [
+                TrendingMovie(),
+                AppConstants.height30,
+                TVTrending(),
+                VietNamNewMovie(),
+                KoreaMovies(),
+                TopRated(),
+              ],
+            )
           ],
         ),
       ),

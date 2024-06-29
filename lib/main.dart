@@ -17,19 +17,22 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => MoviesCubit()..fetchMovie(),
+            create: (context) => MoviesCubit(),
           ),
           BlocProvider(
             create: (context) => DetailMovieCubit(),
           ),
           BlocProvider(
-            create: (context) => DiscoverCubit()..fetchMoviesByGenre(),
+            create: (context) => DiscoverCubit(),
           ),
           BlocProvider(
             create: (context) => NaviBarCubit(),
           ),
           BlocProvider(
             create: (context) => SearchCubit(),
+          ),
+          BlocProvider(
+            create: (context) => TVCubit(),
           ),
         ],
         child: MaterialApp(
@@ -43,7 +46,7 @@ class MyApp extends StatelessWidget {
                   backgroundColor: Colors.black,
                   surfaceTintColor: Colors.black)),
           onGenerateRoute: AppPages.onGenerateRoute,
-          initialRoute: Routes.navibarCineX,
+          initialRoute: Routes.splash,
         ));
   }
 }

@@ -13,33 +13,23 @@ final class DiscoverInitial extends DiscoverState {}
 class DiscoverLoading extends DiscoverState {}
 
 class DiscoverLoaded extends DiscoverState {
-  final List<MovieModel> movies;
-
-  const DiscoverLoaded(this.movies);
-
-  @override
-  List<Object> get props => [movies];
-}
-
-class DiscoverTypeMovieLoaded extends DiscoverState {
-  final List<MovieModel> action;
-  final List<MovieModel> adventure;
-  final List<MovieModel> comedy;
-  final List<MovieModel> horror;
-  final List<MovieModel> drama;
-  final List<MovieModel> thriller;
-
-  const DiscoverTypeMovieLoaded(
-      {required this.action,
-      required this.adventure,
-      required this.comedy,
-      required this.drama,
-      required this.horror,
-      required this.thriller});
-
-  @override
-  List<Object> get props =>
-      [action, adventure, drama, horror, thriller, comedy];
+  final List<MovieModel>? action;
+  final List<MovieModel>? anime;
+  final List<MovieModel>? comedy;
+  final List<MovieModel>? horror;
+  final List<MovieModel>? drama;
+  final List<MovieModel>? thriller;
+  final List<MovieModel>? vnMovies;
+  final List<MovieModel>? koreaMovies;
+  const DiscoverLoaded(
+      {this.action,
+      this.anime,
+      this.comedy,
+      this.drama,
+      this.horror,
+      this.vnMovies,
+      this.thriller,
+      this.koreaMovies});
 }
 
 class DiscoverLError extends DiscoverState {

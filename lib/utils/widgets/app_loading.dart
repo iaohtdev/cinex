@@ -9,7 +9,7 @@ class AppLoading extends StatelessWidget {
   Widget build(BuildContext context) {
     return LoadingAnimationWidget.flickr(
       leftDotColor: AppColor.primaryColor,
-      rightDotColor: AppColor.pink,
+      rightDotColor: AppColor.orange,
       size: size ?? 40,
     );
   }

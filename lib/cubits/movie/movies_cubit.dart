@@ -9,16 +9,18 @@ class MoviesCubit extends Cubit<MoviesState> {
   Future<void> fetchMovie() async {
     try {
       emit(MoviesLoading());
-      final nowPlaying = await MovieRepository.fetchNowPlayingMovies();
+      final nowPlaying = await MovieRepository.fetchTopRatedMovies();
       final upcomming = await MovieRepository.fetchUpCommingMovies();
       final trendingRepo = await MovieRepository.trending();
+
       List<MovieModel> day = trendingRepo['day'] ?? [];
       List<MovieModel> week = trendingRepo['week'] ?? [];
       emit(MoviesLoaded(
-          nowPlaying: nowPlaying,
-          upcoming: upcomming,
-          trendDay: day,
-          trendWeek: week));
+        topRated: nowPlaying,
+        upcoming: upcomming,
+        trendDay: day,
+        trendWeek: week,
+      ));
     } catch (e) {
       emit(const MoviesError('Failed to fetch movies'));
     }

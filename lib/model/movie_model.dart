@@ -61,6 +61,9 @@ class MovieModel {
   MovieModel.fromJson(Map<String, dynamic> json) {
     adult = json['adult'];
     backdropPath = json['backdrop_path'];
+    posterPath = json['poster_path'] != null
+        ? json['poster_path']
+        : json['backdrop_path'];
 
     belongsToCollection = json['belongs_to_collection'] != null
         ? BelongsToCollection.fromJson(json['belongs_to_collection'])
@@ -81,7 +84,6 @@ class MovieModel {
     originalTitle = json['original_title'];
     overview = json['overview'];
     popularity = json['popularity'];
-    posterPath = json['poster_path'];
     if (json['production_companies'] != null) {
       productionCompanies = <ProductionCompanies>[];
       json['production_companies'].forEach((v) {

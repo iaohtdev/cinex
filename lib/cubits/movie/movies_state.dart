@@ -13,20 +13,20 @@ class MoviesInitial extends MoviesState {}
 class MoviesLoading extends MoviesState {}
 
 class MoviesLoaded extends MoviesState {
-  final List<MovieModel>? nowPlaying;
+  final List<MovieModel>? topRated;
   final List<MovieModel>? upcoming;
   final List<MovieModel>? trendDay;
   final List<MovieModel>? trendWeek;
 
   const MoviesLoaded({
-    this.nowPlaying,
+    this.topRated,
     this.upcoming,
     this.trendDay,
     this.trendWeek,
   });
 
   @override
-  List<Object> get props => [nowPlaying ?? [], upcoming ?? []];
+  List<Object> get props => [topRated ?? [], upcoming ?? []];
 }
 
 class MoviesError extends MoviesState {

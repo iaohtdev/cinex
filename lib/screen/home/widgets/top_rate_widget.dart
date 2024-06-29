@@ -6,8 +6,8 @@ import 'package:cinex/utils/components/app_constant.dart';
 import 'package:cinex/utils/style/app_textstyle.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class NowPlayingMovie extends StatelessWidget {
-  const NowPlayingMovie({
+class TopRated extends StatelessWidget {
+  const TopRated({
     super.key,
   });
 
@@ -22,7 +22,7 @@ class NowPlayingMovie extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Phim đang chiếu tại rạp ',
+                'Phim được xếp hạng cao nhất',
                 style: AppTextStyles.l3(),
               ),
               AppConstants.height20,
@@ -30,10 +30,10 @@ class NowPlayingMovie extends StatelessWidget {
                 height: 180,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: state.nowPlaying?.length,
+                  itemCount: state.topRated?.length,
                   itemBuilder: (context, index) {
                     return MovieItem(
-                      movie: state.nowPlaying![index],
+                      movie: state.topRated![index],
                     );
                   },
                 ),

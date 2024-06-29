@@ -1,6 +1,7 @@
 import 'package:cinex/cubits/movie/movies_cubit.dart';
 import 'package:cinex/model/movie_model.dart';
 import 'package:cinex/screen/search/search_screen.dart';
+import 'package:cinex/screen/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cinex/routers/app_routes.dart';
 import 'package:cinex/screen/home/home_screen.dart';
@@ -12,6 +13,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AppPages {
   static Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case Routes.splash:
+        return customPageRoute(
+            pageBuilder: (context, animation, secondaryAnimation) =>
+                const SplashScreen());
       case Routes.home:
         return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>
@@ -41,6 +46,7 @@ class AppPages {
         return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>
                 const SearchScreen());
+
       default:
         return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>

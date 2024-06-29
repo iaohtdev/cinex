@@ -7,3 +7,5 @@ export 'discover/discover_state.dart';
 export 'navibar/navibar_cubit.dart';
 export 'search/search_cubit.dart';
 export 'search/search_state.dart';
+export 'tv/tv_cubit.dart';
+export 'tv/tv_state.dart';
