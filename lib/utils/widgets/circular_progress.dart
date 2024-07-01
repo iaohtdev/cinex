@@ -50,6 +50,7 @@ class CircularProgressWithPercentage extends StatelessWidget {
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('$score',
                 style: AppTextStyles.textStyleBold(fontSize: textSize ?? 12)),

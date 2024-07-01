@@ -24,7 +24,7 @@ class MovieDetailScreen extends StatefulWidget {
 class _MovieDetailScreenState extends State<MovieDetailScreen> {
   final ScrollController _scrollController = ScrollController();
   bool _hasScrolledPastAppBar = false;
-  final heightSliverAppbar = 220.0;
+  final heightSliverAppbar = 265.0;
 
   MovieModel get movie => widget.movie;
   @override
@@ -46,7 +46,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
     if (_scrollController.hasClients) {
       final double offset = _scrollController.offset;
 
-      if (offset > heightSliverAppbar && !_hasScrolledPastAppBar) {
+      if (offset > heightSliverAppbar + 50 && !_hasScrolledPastAppBar) {
         setState(() {
           _hasScrolledPastAppBar = true;
         });
