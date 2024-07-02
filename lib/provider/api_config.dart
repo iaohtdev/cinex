@@ -1,5 +1,6 @@
 class ApiConfig {
   static String movie = '/movie';
+  static String tv = '/tv';
   static String nowPlaying = '$movie/now_playing';
   static String topRated = '$movie/top_rated';
   static String upcoming = '$movie/upcoming';
@@ -7,7 +8,7 @@ class ApiConfig {
   static String trendingWeek = '/trending/movie/week';
   static String trendingTvDay = '/trending/tv/day';
 
-  static String recommendations = '/recommendations';
+  static String similar = '/similar';
   static String credits = '/credits';
   static String genre = '/genre/movie/list';
   static String disover = '/discover/movie';

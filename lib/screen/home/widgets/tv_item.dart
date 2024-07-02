@@ -16,13 +16,17 @@ class TVItem extends StatelessWidget {
   });
   final TVModel tv;
 
-  int get rating => (tv.voteAverage ?? 0).toInt() * 10;
+  int get rating => ((tv.voteAverage ?? 0) * 10).toInt();
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 15),
       child: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, Routes.tvDetail, arguments: {
+              'tv': tv,
+            });
+          },
           child: Stack(
             children: [
               ClipRRect(

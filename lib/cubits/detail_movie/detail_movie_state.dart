@@ -17,10 +17,10 @@ class DetailMoviesLoading extends DetailMovieState {}
 
 class DetailMoviesLoaded extends DetailMovieState {
   final MovieModel? movies;
-  final List<MovieModel>? lstRcm;
+  final List<MovieModel>? similar;
   final List<CastModel>? casts;
 
-  const DetailMoviesLoaded({this.movies, this.lstRcm, this.casts});
+  const DetailMoviesLoaded({this.movies, this.similar, this.casts});
 
   @override
   List<Object> get props => [movies!];

@@ -9,11 +9,11 @@ class DetailMovieCubit extends Cubit<DetailMovieState> {
     try {
       emit(DetailMoviesLoading());
       final moviesResponse = await MovieRepository.fetchDetailMovie(id);
-      final lstRcm = await MovieRepository.fetchRecommendMovie(id);
-      final casts = await CastRepository.fetchCast(id);
+      final lstRcm = await MovieRepository.fetchSimilar(id);
+      final casts = await CastRepository.fetchCastMovie(id);
 
       emit(DetailMoviesLoaded(
-          movies: moviesResponse, lstRcm: lstRcm, casts: casts));
+          movies: moviesResponse, similar: lstRcm, casts: casts));
     } catch (e) {
       emit(DetailMoviesError('$e'));
     }

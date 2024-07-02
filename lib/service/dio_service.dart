@@ -21,8 +21,10 @@ class DioService {
   };
 
   // GET request
-  Future<Response> get(String endpoint,
-      {Map<String, dynamic>? queryParameters}) async {
+  Future<Response> get(
+    String endpoint, {
+    Map<String, dynamic>? queryParameters,
+  }) async {
     try {
       Response response = await _dio.get(
         endpoint,

@@ -56,15 +56,21 @@ class MovieRepository {
     return movie;
   }
 
-  static Future<List<MovieModel>> fetchRecommendMovie(int id) async {
+  static Future<List<MovieModel>> fetchSimilar(int id) async {
     List<MovieModel> movies = [];
 
-    final reponse = await DioService()
-        .get('${ApiConfig.movie}/$id${ApiConfig.recommendations}');
-    for (var i in reponse.data['results']) {
-      if (i['backdrop_path'] != null || i['poster_path'] != null)
-        movies.add(MovieModel.fromJson(i));
+    final response =
+        await DioService().get('${ApiConfig.movie}/$id${ApiConfig.similar}');
+    var results = response.data['results'];
+
+    var filteredResults = results
+        .where((i) => i['backdrop_path'] != null && i['poster_path'] != null)
+        .take(9);
+
+    for (var i in filteredResults) {
+      movies.add(MovieModel.fromJson(i));
     }
+
     return movies;
   }
 

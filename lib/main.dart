@@ -1,4 +1,5 @@
 import 'package:cinex/cubits/cubits.dart';
+import 'package:cinex/cubits/episode/episode_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:cinex/routers/app_pages.dart';
 import 'package:cinex/routers/app_routes.dart';
@@ -33,6 +34,12 @@ class MyApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => TVCubit(),
+          ),
+          BlocProvider(
+            create: (context) => DetailTVCubit(),
+          ),
+          BlocProvider(
+            create: (context) => EpisodeCubit(),
           ),
         ],
         child: MaterialApp(

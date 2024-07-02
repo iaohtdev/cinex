@@ -194,6 +194,12 @@
       "languageVersion": "2.15"
     },
     {
+      "name": "dropdown_button2",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/dropdown_button2-2.3.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "equatable",
       "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/equatable-2.0.5",
       "packageUri": "lib/",
@@ -722,7 +728,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-06-21T22:12:09.217092Z",
+  "generated": "2024-07-01T07:43:40.342520Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///Users/iaohtdev/fvm/versions/3.13.9",

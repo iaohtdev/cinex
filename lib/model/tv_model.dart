@@ -1,18 +1,18 @@
+import 'package:cinex/model/movie_model.dart';
+
 class TVModel {
   bool? adult;
   String? backdropPath;
   List<CreatedBy>? createdBy;
-  List<int>? episodeRunTime;
+  List<dynamic>? episodeRunTime;
   String? firstAirDate;
   List<Genres>? genres;
   String? homepage;
   int? id;
   bool? inProduction;
-  List<String>? languages;
+  List<dynamic>? languages;
   String? lastAirDate;
-  LastEpisodeToAir? lastEpisodeToAir;
   String? name;
-  NextEpisodeToAir? nextEpisodeToAir;
   List<Networks>? networks;
   int? numberOfEpisodes;
   int? numberOfSeasons;
@@ -23,7 +23,6 @@ class TVModel {
   double? popularity;
   String? posterPath;
   List<ProductionCompanies>? productionCompanies;
-  List<ProductionCountries>? productionCountries;
   List<Seasons>? seasons;
   List<SpokenLanguages>? spokenLanguages;
   String? status;
@@ -44,9 +43,7 @@ class TVModel {
       this.inProduction,
       this.languages,
       this.lastAirDate,
-      this.lastEpisodeToAir,
       this.name,
-      this.nextEpisodeToAir,
       this.networks,
       this.numberOfEpisodes,
       this.numberOfSeasons,
@@ -57,7 +54,6 @@ class TVModel {
       this.popularity,
       this.posterPath,
       this.productionCompanies,
-      this.productionCountries,
       this.seasons,
       this.spokenLanguages,
       this.status,
@@ -68,6 +64,7 @@ class TVModel {
 
   TVModel.fromJson(Map<String, dynamic> json) {
     adult = json['adult'];
+    name = json['name'];
     backdropPath = json['backdrop_path'];
     if (json['created_by'] != null) {
       createdBy = <CreatedBy>[];
@@ -88,13 +85,7 @@ class TVModel {
     inProduction = json['in_production'];
     languages = json['languages'];
     lastAirDate = json['last_air_date'];
-    lastEpisodeToAir = json['last_episode_to_air'] != null
-        ? new LastEpisodeToAir.fromJson(json['last_episode_to_air'])
-        : null;
-    name = json['name'];
-    nextEpisodeToAir = json['next_episode_to_air'] != null
-        ? new NextEpisodeToAir.fromJson(json['next_episode_to_air'])
-        : null;
+
     if (json['networks'] != null) {
       networks = <Networks>[];
       json['networks'].forEach((v) {
@@ -115,12 +106,7 @@ class TVModel {
         productionCompanies!.add(new ProductionCompanies.fromJson(v));
       });
     }
-    if (json['production_countries'] != null) {
-      productionCountries = <ProductionCountries>[];
-      json['production_countries'].forEach((v) {
-        productionCountries!.add(new ProductionCountries.fromJson(v));
-      });
-    }
+
     if (json['seasons'] != null) {
       seasons = <Seasons>[];
       json['seasons'].forEach((v) {
@@ -157,13 +143,7 @@ class TVModel {
     data['in_production'] = this.inProduction;
     data['languages'] = this.languages;
     data['last_air_date'] = this.lastAirDate;
-    if (this.lastEpisodeToAir != null) {
-      data['last_episode_to_air'] = this.lastEpisodeToAir!.toJson();
-    }
-    data['name'] = this.name;
-    if (this.nextEpisodeToAir != null) {
-      data['next_episode_to_air'] = this.nextEpisodeToAir!.toJson();
-    }
+
     if (this.networks != null) {
       data['networks'] = this.networks!.map((v) => v.toJson()).toList();
     }
@@ -179,10 +159,7 @@ class TVModel {
       data['production_companies'] =
           this.productionCompanies!.map((v) => v.toJson()).toList();
     }
-    if (this.productionCountries != null) {
-      data['production_countries'] =
-          this.productionCountries!.map((v) => v.toJson()).toList();
-    }
+
     if (this.seasons != null) {
       data['seasons'] = this.seasons!.map((v) => v.toJson()).toList();
     }
@@ -255,136 +232,6 @@ class Genres {
   }
 }
 
-class LastEpisodeToAir {
-  int? id;
-  String? name;
-  String? overview;
-  double? voteAverage;
-  int? voteCount;
-  String? airDate;
-  int? episodeNumber;
-  String? episodeType;
-  String? productionCode;
-  int? runtime;
-  int? seasonNumber;
-  int? showId;
-  String? stillPath;
-
-  LastEpisodeToAir(
-      {this.id,
-      this.name,
-      this.overview,
-      this.voteAverage,
-      this.voteCount,
-      this.airDate,
-      this.episodeNumber,
-      this.episodeType,
-      this.productionCode,
-      this.runtime,
-      this.seasonNumber,
-      this.showId,
-      this.stillPath});
-
-  LastEpisodeToAir.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
-    overview = json['overview'];
-    voteAverage = json['vote_average'];
-    voteCount = json['vote_count'];
-    airDate = json['air_date'];
-    episodeNumber = json['episode_number'];
-    episodeType = json['episode_type'];
-    productionCode = json['production_code'];
-    runtime = json['runtime'];
-    seasonNumber = json['season_number'];
-    showId = json['show_id'];
-    stillPath = json['still_path'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['overview'] = this.overview;
-    data['vote_average'] = this.voteAverage;
-    data['vote_count'] = this.voteCount;
-    data['air_date'] = this.airDate;
-    data['episode_number'] = this.episodeNumber;
-    data['episode_type'] = this.episodeType;
-    data['production_code'] = this.productionCode;
-    data['runtime'] = this.runtime;
-    data['season_number'] = this.seasonNumber;
-    data['show_id'] = this.showId;
-    data['still_path'] = this.stillPath;
-    return data;
-  }
-}
-
-class NextEpisodeToAir {
-  int? id;
-  String? name;
-  String? overview;
-  int? voteAverage;
-  int? voteCount;
-  String? airDate;
-  int? episodeNumber;
-  String? episodeType;
-  String? productionCode;
-  dynamic runtime;
-  int? seasonNumber;
-  int? showId;
-  dynamic stillPath;
-
-  NextEpisodeToAir(
-      {this.id,
-      this.name,
-      this.overview,
-      this.voteAverage,
-      this.voteCount,
-      this.airDate,
-      this.episodeNumber,
-      this.episodeType,
-      this.productionCode,
-      this.runtime,
-      this.seasonNumber,
-      this.showId,
-      this.stillPath});
-
-  NextEpisodeToAir.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
-    overview = json['overview'];
-    voteAverage = json['vote_average'];
-    voteCount = json['vote_count'];
-    airDate = json['air_date'];
-    episodeNumber = json['episode_number'];
-    episodeType = json['episode_type'];
-    productionCode = json['production_code'];
-    runtime = json['runtime'];
-    seasonNumber = json['season_number'];
-    showId = json['show_id'];
-    stillPath = json['still_path'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['overview'] = this.overview;
-    data['vote_average'] = this.voteAverage;
-    data['vote_count'] = this.voteCount;
-    data['air_date'] = this.airDate;
-    data['episode_number'] = this.episodeNumber;
-    data['episode_type'] = this.episodeType;
-    data['production_code'] = this.productionCode;
-    data['runtime'] = this.runtime;
-    data['season_number'] = this.seasonNumber;
-    data['show_id'] = this.showId;
-    data['still_path'] = this.stillPath;
-    return data;
-  }
-}
-
 class Networks {
   int? id;
   String? logoPath;
@@ -406,25 +253,6 @@ class Networks {
     data['logo_path'] = this.logoPath;
     data['name'] = this.name;
     data['origin_country'] = this.originCountry;
-    return data;
-  }
-}
-
-class ProductionCountries {
-  String? iso31661;
-  String? name;
-
-  ProductionCountries({this.iso31661, this.name});
-
-  ProductionCountries.fromJson(Map<String, dynamic> json) {
-    iso31661 = json['iso_3166_1'];
-    name = json['name'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['iso_3166_1'] = this.iso31661;
-    data['name'] = this.name;
     return data;
   }
 }
@@ -492,31 +320,6 @@ class SpokenLanguages {
     data['english_name'] = this.englishName;
     data['iso_639_1'] = this.iso6391;
     data['name'] = this.name;
-    return data;
-  }
-}
-
-class ProductionCompanies {
-  int? id;
-  String? logoPath;
-  String? name;
-  String? originCountry;
-
-  ProductionCompanies({this.id, this.logoPath, this.name, this.originCountry});
-
-  ProductionCompanies.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    logoPath = json['logo_path'];
-    name = json['name'];
-    originCountry = json['origin_country'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['logo_path'] = this.logoPath;
-    data['name'] = this.name;
-    data['origin_country'] = this.originCountry;
     return data;
   }
 }
