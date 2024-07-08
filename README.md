@@ -17,7 +17,9 @@ The **Movie Info Lookup Mobile App** is a mobile application designed to help us
 ## Screenshots
 ![banner](https://github.com/iaohtdev/cinex/assets/95197224/0a2389e5-19f3-485a-9bf3-14a01d1862bf)
 
-## Installation
+
+## Video Demo
+https://github.com/iaohtdev/cinex/assets/95197224/517b03a3-a34a-43ad-b13e-bca247f0e8d8
 
 ### Prerequisites
 - [Flutter](https://flutter.dev/docs/get-started/install)
