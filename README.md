@@ -22,6 +22,7 @@ The **Movie Info Lookup Mobile App** is a mobile application designed to help us
 ### Prerequisites
 - [Flutter](https://flutter.dev/docs/get-started/install)
 - [Dart](https://dart.dev/get-dart)
+- [The Movie DB]([https://dart.dev/get-dart](https://themoviedb.org/))
 
 ### Steps
 1. Clone the repository
