@@ -1,4 +1,4 @@
-# Movie Info Lookup Mobile App
+# CINEX -  Movie Info App
 
 ![logo_cinex](https://github.com/iaohtdev/cinex/assets/95197224/dc504631-a657-43cb-a017-869ff07c0a9d)
 
@@ -15,12 +15,7 @@ The **Movie Info Lookup Mobile App** is a mobile application designed to help us
 - Save favorite movies for quick access
 
 ## Screenshots
-![Home Screen](![Simulator Screenshot - iPhone 15 Pro - 2024-07-08 at 14 54 58](https://github.com/iaohtdev/cinex/assets/95197224/5bb9bbaa-b802-4e1c-a1de-)
-
-
-![Search Screen](![Simulator Screenshot - iPhone 15 Pro - 2024-07-08 at 14 54 58](https://github.com/iaohtdev/cinex/assets/95197224/5bb9bbaa-b802-4e1c-a1de-d3aeef2d120d))
-![Movie Detail Screen](![Simulator Screenshot - iPhone 15 Pro - 2024-07-08 at 14 55 15](https://github.com/iaohtdev/cinex/assets/95197224/3e4dbc74-7b56-42de-903d-d41b5fd2424e)
-)
+![banner](https://github.com/iaohtdev/cinex/assets/95197224/0a2389e5-19f3-485a-9bf3-14a01d1862bf)
 
 ## Installation
 
