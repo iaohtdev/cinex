@@ -59,20 +59,19 @@ class $AssetsImagesGen {
   /// File path: assets/images/background.svg
   String get background => 'assets/images/background.svg';
 
+  /// File path: assets/images/blur.svg
+  String get blur => 'assets/images/blur.svg';
+
+  /// File path: assets/images/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+
   /// File path: assets/images/logo_cinex.png
   AssetGenImage get logoCinex =>
       const AssetGenImage('assets/images/logo_cinex.png');
 
-  /// File path: assets/images/mask.png
-  AssetGenImage get mask => const AssetGenImage('assets/images/mask.png');
-
-  /// File path: assets/images/mask_firstIndex.png
-  AssetGenImage get maskFirstIndex =>
-      const AssetGenImage('assets/images/mask_firstIndex.png');
-
-  /// File path: assets/images/mask_lastIndex.png
-  AssetGenImage get maskLastIndex =>
-      const AssetGenImage('assets/images/mask_lastIndex.png');
+  /// File path: assets/images/logo_gif.gif
+  AssetGenImage get logoGif =>
+      const AssetGenImage('assets/images/logo_gif.gif');
 
   /// File path: assets/images/poster_1.jpeg
   AssetGenImage get poster1 =>
@@ -82,18 +81,26 @@ class $AssetsImagesGen {
   AssetGenImage get poster2 =>
       const AssetGenImage('assets/images/poster_2.JPG');
 
+  /// File path: assets/images/searching.svg
+  String get searching => 'assets/images/searching.svg';
+
+  /// File path: assets/images/test.svg
+  String get test => 'assets/images/test.svg';
+
   /// File path: assets/images/welcome.png
   AssetGenImage get welcome => const AssetGenImage('assets/images/welcome.png');
 
   /// List of all assets
   List<dynamic> get values => [
         background,
+        blur,
+        logo,
         logoCinex,
-        mask,
-        maskFirstIndex,
-        maskLastIndex,
+        logoGif,
         poster1,
         poster2,
+        searching,
+        test,
         welcome
       ];
 }

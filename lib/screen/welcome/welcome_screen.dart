@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:rate_movie/gen/assets.gen.dart';
-import 'package:rate_movie/routers/app_routes.dart';
-import 'package:rate_movie/utils/components/app_constant.dart';
-import 'package:rate_movie/utils/style/app_color.dart';
-import 'package:rate_movie/utils/style/app_textstyle.dart';
+import 'package:cinex/gen/assets.gen.dart';
+import 'package:cinex/routers/app_routes.dart';
+import 'package:cinex/utils/components/app_constant.dart';
+import 'package:cinex/utils/style/app_color.dart';
+import 'package:cinex/utils/style/app_textstyle.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});

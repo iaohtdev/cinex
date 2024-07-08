@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rate_movie/utils/components/app_constant.dart';
-import 'package:rate_movie/utils/style/app_color.dart';
-import 'package:rate_movie/utils/style/app_textstyle.dart';
+import 'package:cinex/utils/components/app_constant.dart';
+import 'package:cinex/utils/style/app_color.dart';
+import 'package:cinex/utils/style/app_textstyle.dart';
 
 class AppSnackBar {
   static void errorBar(BuildContext context, {String? title}) {

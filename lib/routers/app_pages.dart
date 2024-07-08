@@ -1,17 +1,31 @@
+import 'package:cinex/cubits/movie/movies_cubit.dart';
+import 'package:cinex/model/movie_model.dart';
+import 'package:cinex/model/tv_model.dart';
+import 'package:cinex/screen/detail/tv/tv_detail_screen.dart';
+import 'package:cinex/screen/search/search_screen.dart';
+import 'package:cinex/screen/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:rate_movie/routers/app_routes.dart';
-import 'package:rate_movie/screen/home/home_screen.dart';
-import 'package:rate_movie/screen/movie_detail/movie_detail_screen.dart';
-import 'package:rate_movie/screen/navibar/navibar_screen.dart';
-import 'package:rate_movie/screen/welcome/welcome_screen.dart';
+import 'package:cinex/routers/app_routes.dart';
+import 'package:cinex/screen/home/home_screen.dart';
+import 'package:cinex/screen/detail/movie/movie_detail_screen.dart';
+import 'package:cinex/screen/navibar/navibar_screen.dart';
+import 'package:cinex/screen/welcome/welcome_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppPages {
   static Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case Routes.splash:
+        return customPageRoute(
+            pageBuilder: (context, animation, secondaryAnimation) =>
+                const SplashScreen());
       case Routes.home:
         return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>
-                const HomeScreen());
+                BlocProvider(
+                  create: (context) => MoviesCubit()..fetchMovie(),
+                  child: HomeScreen(),
+                ));
       case Routes.welcome:
         return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>
@@ -22,8 +36,29 @@ class AppPages {
                 const NavibarCineX());
       case Routes.movieDetail:
         return customPageRoute(
+            pageBuilder: (context, animation, secondaryAnimation) {
+          final arguments = settings.arguments as Map<String, dynamic>? ?? {};
+          final movie = arguments['movie'] as MovieModel;
+
+          return MovieDetailScreen(
+            movie: movie,
+          );
+        });
+      case Routes.tvDetail:
+        return customPageRoute(
+            pageBuilder: (context, animation, secondaryAnimation) {
+          final arguments = settings.arguments as Map<String, dynamic>? ?? {};
+          final tv = arguments['tv'] as TVModel;
+
+          return TvDetailScreen(
+            tv: tv,
+          );
+        });
+      case Routes.search:
+        return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>
-                const MovieDetail());
+                const SearchScreen());
+
       default:
         return customPageRoute(
             pageBuilder: (context, animation, secondaryAnimation) =>
@@ -50,5 +85,5 @@ customPageRoute(
             ).animate(animation),
             child: child,
           ),
-      transitionDuration: const Duration(milliseconds: 100));
+      transitionDuration: const Duration(milliseconds: 200));
 }

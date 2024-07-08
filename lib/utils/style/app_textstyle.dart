@@ -32,7 +32,7 @@ class AppTextStyles {
         height: height,
         fontSize: fontSize ?? 14,
         decoration: decoration,
-        color: color ?? Colors.black,
+        color: color ?? Colors.white,
         fontWeight: fontWeight ?? FontWeight.w400,
         fontFamily: fontBold);
   }
