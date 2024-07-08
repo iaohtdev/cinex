@@ -1,6 +1,7 @@
 # Movie Info Lookup Mobile App
 
-![Movie Info Lookup](path/to/your/logo.png)
+![logo_cinex](https://github.com/iaohtdev/cinex/assets/95197224/dc504631-a657-43cb-a017-869ff07c0a9d)
+
 
 ## Introduction
 The **Movie Info Lookup Mobile App** is a mobile application designed to help users search for and access detailed information about their favorite movies. The app provides movie details, trailers, cast information, and user reviews.
@@ -15,6 +16,8 @@ The **Movie Info Lookup Mobile App** is a mobile application designed to help us
 
 ## Screenshots
 ![Home Screen](path/to/home_screen.png)
+![image](https://github.com/iaohtdev/cinex/assets/95197224/350ce27e-f96e-4277-8451-43e48f4520df)
+
 ![Search Screen](path/to/search_screen.png)
 ![Movie Detail Screen](path/to/movie_detail_screen.png)
 
