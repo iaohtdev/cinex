@@ -201,14 +201,13 @@ class _EpisodeTVWidgetState extends State<EpisodeTVWidget> {
             ],
           ),
           AppConstants.height5,
-          Text(
-            e.overview!.isNotEmpty
-                ? e.overview ?? ''
-                : 'Không có bản tóm tắt cho tập phim này',
-            maxLines: 3,
-            overflow: TextOverflow.ellipsis,
-            style: AppTextStyles.textStyle(fontSize: 12),
-          )
+          if (e.overview != '')
+            Text(
+              e.overview ?? '',
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+              style: AppTextStyles.textStyle(fontSize: 12),
+            )
         ],
       ),
     );

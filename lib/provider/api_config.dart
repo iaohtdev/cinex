@@ -1,6 +1,7 @@
 class ApiConfig {
   static String movie = '/movie';
   static String tv = '/tv';
+  static String video = '/videos';
   static String nowPlaying = '$movie/now_playing';
   static String topRated = '$movie/top_rated';
   static String upcoming = '$movie/upcoming';

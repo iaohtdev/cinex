@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		vtZRhewv8PvIVZFxTBex5qLrbUk=
+		I7WclDQgfMEYF+vwPTuvUgmS56c=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		v7WSEPf2P37H4u2JUDA2AIPkVkA=
+		13Aq0abDa6Im4+U2/s2RzBRV9/I=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		fN5ceZRbmpgIwmrUYdAYERuszoA=
+		Jb7FodJNzhLS7A9ZBAPeo8XYb94=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		FC0+YYtlvWSw0fgXZKJ7Rbp5KR4=
+		a22vJ6m7bn9buZ3fyeKFKFWPIDE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		R/p7UkGADi7rSbXtXyD1OKUJGS8=
+		nDJ0WIqbckDxuWFSbUFw0EoJuuU=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Lexend-Bold.ttf</key>
 		<data>
@@ -162,11 +162,15 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		MrR4flo9nyZdjz2S78mO3X8mddo=
+		73iiiYwLiUHVKtWIOrKiD5KqDhs=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
 		Bvk+P1ykE1PGRdktwgwDyz6AOqM=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/youtube_player_iframe/assets/player.html</key>
+		<data>
+		WOXrT/iO937C+Oc0oJ9uMG52zqk=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -304,6 +308,46 @@
 		<data>
 		YIiJ5tHvqBeSpBm2mcfVZdaGz3E=
 		</data>
+		<key>Frameworks/url_launcher_ios.framework/Info.plist</key>
+		<data>
+		vEkQCeN1t4t82ByjWh/qKqQiaU4=
+		</data>
+		<key>Frameworks/url_launcher_ios.framework/_CodeSignature/CodeResources</key>
+		<data>
+		qif5pjdJUyXxVJ/l/6HqddBiU+U=
+		</data>
+		<key>Frameworks/url_launcher_ios.framework/url_launcher_ios</key>
+		<data>
+		eWsjDgegz+PiP479BqV2N6LFxec=
+		</data>
+		<key>Frameworks/url_launcher_ios.framework/url_launcher_ios_privacy.bundle/Info.plist</key>
+		<data>
+		p4HmLFCXYoPe9TyIgPySZnUVmXo=
+		</data>
+		<key>Frameworks/url_launcher_ios.framework/url_launcher_ios_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		/LX0ZlwxwIAIhjZaDB8EiH5KpXA=
+		</data>
+		<key>Frameworks/webview_flutter_wkwebview.framework/Info.plist</key>
+		<data>
+		mS3oWDJrobDHEMEZubeNCpxuJJM=
+		</data>
+		<key>Frameworks/webview_flutter_wkwebview.framework/_CodeSignature/CodeResources</key>
+		<data>
+		PYdeOo3lKACUIcLvbg4A0RYc4h0=
+		</data>
+		<key>Frameworks/webview_flutter_wkwebview.framework/webview_flutter_wkwebview</key>
+		<data>
+		+RhuVcU3T38HBPnX6GVy77sVWUM=
+		</data>
+		<key>Frameworks/webview_flutter_wkwebview.framework/webview_flutter_wkwebview_privacy.bundle/Info.plist</key>
+		<data>
+		++au303he2LrNFS/HI4gfNH8M40=
+		</data>
+		<key>Frameworks/webview_flutter_wkwebview.framework/webview_flutter_wkwebview_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		/LX0ZlwxwIAIhjZaDB8EiH5KpXA=
+		</data>
 		<key>Info.plist</key>
 		<data>
 		gcUEoerH9ErIcWz3wzn/bqOXb1E=
@@ -389,7 +433,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			spvoDJIxypxxKVDnZdpuHeZI+AJuLiaNw/sD2rANlAI=
+			Re9aLmV6rtv7bUrjPufvGXwPOyQ48tRD53tDzn2qzso=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -403,21 +447,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PPcHHgvO36MoxM2tjI+MXlHbBjEgA3OEd9UKkjATQ70=
+			dJXy9u8zTIidsxvOxKoq54WLZUf4oBZ52P+x7ANykyc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wROcuk1az/wqE4cL/9nVbSwAzDaLdkzp7UmL7gbZRlI=
+			tsebzQtp5K5KKypN6Ck1ZOum6ddpTZBVVBSWLTp64j8=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ggyQfamjGIBmWLXtvrbZZsH+omkaowY4tdSAVkfZZQg=
+			RxkmHVdaFQOnmQ8ZD4HrvwvIaHYunJ6wLvCpwHyLPKI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -431,7 +475,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tW0vXqpWaDvLRfO5pdSV+bImP6hbIantVIbagc3FrH8=
+			D/8LGEXUfgMCYN1CN2J8r3m+6QA375bKKUcQWM5TJqY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Lexend-Bold.ttf</key>
@@ -592,7 +636,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cK2WE4bMGiA3IUqUpttj/URBTzmVhh/8QVSIQM+bWbg=
+			0G3VXSgKANIKA4etZa0cXdkyDeNJXHQQYzMVd3WbdQ4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -600,6 +644,13 @@
 			<key>hash2</key>
 			<data>
 			Z8RP6Rg7AC553ef2l34piGYcmj5KPF/OloeH79vtgjw=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/youtube_player_iframe/assets/player.html</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uGNprXvx5KVqBDT2nD3aAlkRKzThA6MWS0RGAO7/TFk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
@@ -838,6 +889,76 @@
 			<key>hash2</key>
 			<data>
 			RyJqKWCN8gatChEOav61p3/1dawd+cdr/bLW37P6/tE=
+			</data>
+		</dict>
+		<key>Frameworks/url_launcher_ios.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5py+FSNHoNZHmwrpz9cyrYvXmdRwo8VZw4kjAMCE55U=
+			</data>
+		</dict>
+		<key>Frameworks/url_launcher_ios.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			845YrQplmX8f/sq0qBlfNq4J8atpZ216aO+nmhtPq+w=
+			</data>
+		</dict>
+		<key>Frameworks/url_launcher_ios.framework/url_launcher_ios</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2f3DWoqC596QLb9hMfs1dcIu4+qOg37HF229rALQeKY=
+			</data>
+		</dict>
+		<key>Frameworks/url_launcher_ios.framework/url_launcher_ios_privacy.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			la0zVlsz/8jRXzNqgzc82dM/cUXIYrfIjhJJepLZ5Uo=
+			</data>
+		</dict>
+		<key>Frameworks/url_launcher_ios.framework/url_launcher_ios_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bS2g2NkwIn1CjB2TY7CtbjoS4sm2jFzilxWKdBL8jDE=
+			</data>
+		</dict>
+		<key>Frameworks/webview_flutter_wkwebview.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BUoyuO4NRot8SJvGMRGDZiEnfV0AlMuUPZ83+YEicZ4=
+			</data>
+		</dict>
+		<key>Frameworks/webview_flutter_wkwebview.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			stzBf1m9DcL4OJz4OxP3CtZAg+/ZnyumdLcnX1b5X1Y=
+			</data>
+		</dict>
+		<key>Frameworks/webview_flutter_wkwebview.framework/webview_flutter_wkwebview</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			18VUwBnBLjWXMyxbHcT0hZL0xL1lTpRsXX0V5ooM0ug=
+			</data>
+		</dict>
+		<key>Frameworks/webview_flutter_wkwebview.framework/webview_flutter_wkwebview_privacy.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			b9RB8F+LUGGic6xHg4Zg/B/3eLyfMcfsnw7yTnl4GQk=
+			</data>
+		</dict>
+		<key>Frameworks/webview_flutter_wkwebview.framework/webview_flutter_wkwebview_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bS2g2NkwIn1CjB2TY7CtbjoS4sm2jFzilxWKdBL8jDE=
 			</data>
 		</dict>
 	</dict>

@@ -25,13 +25,12 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
   final ScrollController _scrollController = ScrollController();
   bool _hasScrolledPastAppBar = false;
   final heightSliverAppbar = 265.0;
-
   MovieModel get movie => widget.movie;
+
   @override
   void initState() {
     super.initState();
     BlocProvider.of<DetailMovieCubit>(context).fetchDetail(movie.id ?? 0);
-
     _scrollController.addListener(_scrollListener);
   }
 

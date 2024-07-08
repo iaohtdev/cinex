@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:cinex/utils/components/app_constant.dart';
 import 'package:cinex/utils/style/app_color.dart';
 import 'package:cinex/utils/style/app_textstyle.dart';
-import 'package:readmore/readmore.dart';
 
 class BodyMovieDetail extends StatefulWidget {
   const BodyMovieDetail({
@@ -67,26 +66,6 @@ class _BodyMovieDetailState extends State<BodyMovieDetail>
         },
         childCount: 1,
       ),
-    );
-  }
-
-  Column _des() {
-    return Column(
-      children: [
-        ReadMoreText(
-          movie?.overview ?? '',
-          trimMode: TrimMode.Line,
-          trimLines: 3,
-          style: AppTextStyles.textStyle(color: Colors.white, fontSize: 16),
-          trimCollapsedText: 'đọc thêm',
-          trimExpandedText: ' thu gọn',
-          moreStyle: AppTextStyles.textStyle(
-              color: AppColor.primaryColor, fontSize: 16),
-          lessStyle: AppTextStyles.textStyle(
-              color: AppColor.primaryColor, fontSize: 16),
-        ),
-        AppConstants.height20,
-      ],
     );
   }
 

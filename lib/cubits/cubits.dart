@@ -14,3 +14,6 @@ export 'detail_movie/detail_movie_state.dart';
 
 export 'episode/episode_cubit.dart';
 export 'episode/episode_state.dart';
+
+export 'trailer/trailer_cubit.dart';
+export 'trailer/trailer_state.dart';

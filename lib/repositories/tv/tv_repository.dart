@@ -30,8 +30,9 @@ class TVRepository {
     EpisodeModel? episode;
 
     final reponse = await DioService().get(
-        '${ApiConfig.tv}/$id/season/$seasonNumber',
-        queryParameters: {'language': 'en_US'});
+      '${ApiConfig.tv}/$id/season/$seasonNumber',
+      queryParameters: {'language': 'en_US'},
+    );
 
     episode = EpisodeModel.fromJson(reponse.data);
 
