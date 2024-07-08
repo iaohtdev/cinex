@@ -15,11 +15,12 @@ The **Movie Info Lookup Mobile App** is a mobile application designed to help us
 - Save favorite movies for quick access
 
 ## Screenshots
-![Home Screen](path/to/home_screen.png)
-![image](https://github.com/iaohtdev/cinex/assets/95197224/350ce27e-f96e-4277-8451-43e48f4520df)
+![Home Screen](![Simulator Screenshot - iPhone 15 Pro - 2024-07-08 at 14 54 58](https://github.com/iaohtdev/cinex/assets/95197224/5bb9bbaa-b802-4e1c-a1de-)
 
-![Search Screen](path/to/search_screen.png)
-![Movie Detail Screen](path/to/movie_detail_screen.png)
+
+![Search Screen](![Simulator Screenshot - iPhone 15 Pro - 2024-07-08 at 14 54 58](https://github.com/iaohtdev/cinex/assets/95197224/5bb9bbaa-b802-4e1c-a1de-d3aeef2d120d))
+![Movie Detail Screen](![Simulator Screenshot - iPhone 15 Pro - 2024-07-08 at 14 55 15](https://github.com/iaohtdev/cinex/assets/95197224/3e4dbc74-7b56-42de-903d-d41b5fd2424e)
+)
 
 ## Installation
 
@@ -30,7 +31,7 @@ The **Movie Info Lookup Mobile App** is a mobile application designed to help us
 ### Steps
 1. Clone the repository
     ```bash
-    git clone https://github.com/your-username/movie-info-lookup.git
+    git clone https://github.com/iaohtdev/cinex
     ```
 2. Navigate to the project directory
     ```bash
