@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cinex/utils/components/app_constant.dart';
-import 'package:cinex/utils/style/app_color.dart';
+import 'package:cinex/core/theme/app_color.dart';
 import 'package:cinex/utils/style/app_textstyle.dart';
 
 class AppSnackBar {

@@ -1,8 +1,8 @@
-import 'package:cinex/cubits/cubits.dart';
+import 'package:cinex/core/theme/theme.dart';
+import 'package:cinex/features/cinex/presentation/cubits/cubits.dart';
 import 'package:flutter/material.dart';
-import 'package:cinex/routers/app_pages.dart';
-import 'package:cinex/routers/app_routes.dart';
-import 'package:cinex/utils/style/app_textstyle.dart';
+import 'package:cinex/features/cinex/presentation/routers/app_pages.dart';
+import 'package:cinex/features/cinex/presentation/routers/app_routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
@@ -46,14 +46,7 @@ class MyApp extends StatelessWidget {
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-              fontFamily: AppTextStyles.fontRegular,
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
-              useMaterial3: true,
-              scaffoldBackgroundColor: Colors.black,
-              appBarTheme: const AppBarTheme(
-                  backgroundColor: Colors.black,
-                  surfaceTintColor: Colors.black)),
+          theme: AppTheme.themeApp,
           onGenerateRoute: AppPages.onGenerateRoute,
           initialRoute: Routes.splash,
         ));

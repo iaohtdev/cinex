@@ -284,6 +284,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "fpdart",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/fpdart-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "frontend_server_client",
       "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/frontend_server_client-4.0.0",
       "packageUri": "lib/",
@@ -818,7 +824,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-07-04T01:50:51.719038Z",
+  "generated": "2024-07-14T06:32:03.424195Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///Users/iaohtdev/fvm/versions/3.13.9",
