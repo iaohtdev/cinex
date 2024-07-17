@@ -1,13 +1,13 @@
 import 'package:cinex/core/model/episode_model.dart';
 import 'package:cinex/core/model/tv_model.dart';
 import 'package:cinex/provider/api_config.dart';
-import 'package:cinex/features/cinex/data/network/dio_service.dart';
+import 'package:cinex/di.dart';
 
 class TVRepository {
   static Future<List<TVModel>> trendingTVDay() async {
     List<TVModel> movies = [];
 
-    final reponse = await DioService().get(ApiConfig.trendingTvDay);
+    final reponse = await dio.get(ApiConfig.trendingTvDay);
     for (var i in reponse.data['results']) {
       if (i['backdrop_path'] != null || i['poster_path'] != null)
         movies.add(TVModel.fromJson(i));
@@ -18,7 +18,7 @@ class TVRepository {
   static Future<TVModel?> fetchDetailTV(int id) async {
     TVModel? movie;
 
-    final reponse = await DioService().get('${ApiConfig.tv}/$id');
+    final reponse = await dio.get('${ApiConfig.tv}/$id');
 
     movie = TVModel.fromJson(reponse.data);
 
@@ -29,7 +29,7 @@ class TVRepository {
       {required int id, required int seasonNumber}) async {
     EpisodeModel? episode;
 
-    final reponse = await DioService().get(
+    final reponse = await dio.get(
       '${ApiConfig.tv}/$id/season/$seasonNumber',
       queryParameters: {'language': 'en_US'},
     );
@@ -42,8 +42,7 @@ class TVRepository {
   static Future<List<TVModel>> fetchSimilar(int id) async {
     List<TVModel> movies = [];
 
-    final response =
-        await DioService().get('${ApiConfig.tv}/$id${ApiConfig.similar}');
+    final response = await dio.get('${ApiConfig.tv}/$id${ApiConfig.similar}');
     var results = response.data['results'];
 
     var filteredResults = results

@@ -1,4 +1,5 @@
 import 'package:cinex/core/theme/theme.dart';
+import 'package:cinex/di.dart';
 import 'package:cinex/features/cinex/presentation/cubits/cubits.dart';
 import 'package:flutter/material.dart';
 import 'package:cinex/features/cinex/presentation/routers/app_pages.dart';
@@ -6,6 +7,7 @@ import 'package:cinex/features/cinex/presentation/routers/app_routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
+  setupLocator();
   runApp(const MyApp());
 }
 

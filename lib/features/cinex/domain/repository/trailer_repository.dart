@@ -1,6 +1,6 @@
 import 'package:cinex/core/model/trailer_model.dart';
 import 'package:cinex/provider/api_config.dart';
-import 'package:cinex/features/cinex/data/network/dio_service.dart';
+import 'package:cinex/di.dart';
 
 class TrailerRepository {
   static Future<TrailerModel?> fetchTrailer(int id) async {
@@ -8,7 +8,7 @@ class TrailerRepository {
 
     try {
       final response =
-          await DioService().get('${ApiConfig.movie}/$id${ApiConfig.video}');
+          await dio.get('${ApiConfig.movie}/$id${ApiConfig.video}');
       var results = response.data['results'];
 
       for (var i in results) {

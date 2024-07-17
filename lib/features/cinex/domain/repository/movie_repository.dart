@@ -1,12 +1,12 @@
 import 'package:cinex/core/model/movie_model.dart';
 import 'package:cinex/provider/api_config.dart';
-import 'package:cinex/features/cinex/data/network/dio_service.dart';
+import 'package:cinex/di.dart';
 
 class MovieRepository {
   static Future<List<MovieModel>> fetchTopRatedMovies() async {
     List<MovieModel> lst = [];
 
-    final reponse = await DioService().get(ApiConfig.topRated);
+    final reponse = await dio.get(ApiConfig.topRated);
 
     for (var i in reponse.data['results']) {
       if (i['backdrop_path'] != null || i['poster_path'] != null)
@@ -22,7 +22,7 @@ class MovieRepository {
     final now = DateTime.now();
 
     while (page <= 3) {
-      final response = await DioService().get(
+      final response = await dio.get(
         ApiConfig.upcoming,
         queryParameters: {'page': page},
       );
@@ -49,7 +49,7 @@ class MovieRepository {
   static Future<MovieModel?> fetchDetailMovie(int id) async {
     MovieModel? movie;
 
-    final reponse = await DioService().get('${ApiConfig.movie}/$id');
+    final reponse = await dio.get('${ApiConfig.movie}/$id');
 
     movie = MovieModel.fromJson(reponse.data);
 
@@ -60,7 +60,7 @@ class MovieRepository {
     List<MovieModel> movies = [];
 
     final response =
-        await DioService().get('${ApiConfig.movie}/$id${ApiConfig.similar}');
+        await dio.get('${ApiConfig.movie}/$id${ApiConfig.similar}');
     var results = response.data['results'];
 
     var filteredResults = results
@@ -75,7 +75,7 @@ class MovieRepository {
   }
 
   static Future<Map<String, List<MovieModel>>> trending() async {
-    final dioService = DioService();
+    final dioService = dio;
 
     final responses = await Future.wait([
       dioService.get(ApiConfig.trendingDay),
@@ -98,7 +98,7 @@ class MovieRepository {
   static Future<List<MovieModel>> trendingTVDay() async {
     List<MovieModel> movies = [];
 
-    final reponse = await DioService().get(ApiConfig.trendingTvDay);
+    final reponse = await dio.get(ApiConfig.trendingTvDay);
     for (var i in reponse.data['results']) {
       if (i['backdrop_path'] != null || i['poster_path'] != null)
         movies.add(MovieModel.fromJson(i));

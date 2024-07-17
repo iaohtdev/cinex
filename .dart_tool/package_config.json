@@ -296,6 +296,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "get_it",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/get_it-7.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "glob",
       "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/glob-2.1.2",
       "packageUri": "lib/",
@@ -824,7 +830,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-07-14T06:32:03.424195Z",
+  "generated": "2024-07-17T07:26:59.552860Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///Users/iaohtdev/fvm/versions/3.13.9",

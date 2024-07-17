@@ -1,7 +1,7 @@
 import 'package:cinex/core/model/models.dart';
 import 'package:cinex/provider/api_config.dart';
-import 'package:cinex/features/cinex/data/network/dio_service.dart';
 import 'package:cinex/utils/enum/media_type.dart';
+import 'package:cinex/di.dart';
 
 class SearchRepository {
   static Future<Map<String, dynamic>> search({String? query}) async {
@@ -9,8 +9,8 @@ class SearchRepository {
     List<CastModel> casts = [];
     List<MovieModel> tv = [];
 
-    final response = await DioService()
-        .get(ApiConfig.searchMutil, queryParameters: {'query': query});
+    final response =
+        await dio.get(ApiConfig.searchMutil, queryParameters: {'query': query});
 
     for (var item in response.data['results']) {
       if (item['media_type'] == MediaType.person.name) {

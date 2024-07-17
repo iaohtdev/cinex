@@ -1,13 +1,13 @@
 import 'package:cinex/core/model/models.dart';
+import 'package:cinex/di.dart';
 import 'package:cinex/provider/api_config.dart';
-import 'package:cinex/features/cinex/data/network/dio_service.dart';
 
 class DiscoverRepository {
   static Future<List<MovieModel>> discover(
       {int? genre, String? sortBy, String? originalLanguage}) async {
     List<MovieModel> movies = [];
 
-    final reponse = await DioService().get(ApiConfig.disover, queryParameters: {
+    final reponse = await dio.get(ApiConfig.disover, queryParameters: {
       'with_genres': genre,
       'sort_by': sortBy,
       'with_original_language': originalLanguage
