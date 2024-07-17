@@ -1,23 +1,24 @@
-import 'package:cinex/features/cinex/presentation/cubits/navibar/navibar_cubit.dart';
-import 'package:cinex/features/cinex/presentation/routers/app_routes.dart';
-import 'package:cinex/utils/common/app_common.dart';
+import 'package:cinex/presentation/cubits/navibar/navibar_cubit.dart';
+import 'package:cinex/presentation/routers/app_routes.dart';
+import 'package:cinex/core/shared/extensions/app_extensions.dart';
 import 'package:cinex/utils/components/app_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cinex/gen/assets.gen.dart';
-import 'package:cinex/core/theme/app_color.dart';
+import 'package:cinex/core/shared/theme/app_color.dart';
 import 'package:cinex/utils/style/app_textstyle.dart';
 
 class AppAppBar extends StatelessWidget implements PreferredSize {
-  const AppAppBar({super.key, this.onTap});
+  AppAppBar({super.key, this.onTap});
   final Function()? onTap;
 
+  final FocusNode focusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: GestureDetector(
-        onTap: () => AppCommon.unfocus(),
+        onTap: () => focusNode.unfocusNode(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
@@ -27,7 +28,7 @@ class AppAppBar extends StatelessWidget implements PreferredSize {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      AppCommon.unfocus();
+                      focusNode.unfocusNode();
                       context.read<NaviBarCubit>().updateIndex(0);
                     },
                     child: Text(
