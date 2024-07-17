@@ -1,4 +1,4 @@
-import 'package:cinex/core/model/episode_model.dart';
+import 'package:cinex/data/models/episode_model.dart';
 import 'package:equatable/equatable.dart';
 
 sealed class EpisodeState extends Equatable {

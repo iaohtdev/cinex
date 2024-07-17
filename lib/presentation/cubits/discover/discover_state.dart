@@ -1,4 +1,4 @@
-import 'package:cinex/core/model/models.dart';
+import 'package:cinex/data/models/models.dart';
 import 'package:equatable/equatable.dart';
 
 sealed class DiscoverState extends Equatable {

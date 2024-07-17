@@ -1,4 +1,4 @@
-import 'package:cinex/core/model/trailer_model.dart';
+import 'package:cinex/data/models/trailer_model.dart';
 import 'package:equatable/equatable.dart';
 
 sealed class TrailerState extends Equatable {

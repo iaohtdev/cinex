@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cinex/gen/assets.gen.dart';
-import 'package:cinex/data/config/tmdb.dart';
-import 'package:cinex/core/shared/theme/app_color.dart';
+import 'package:cinex/core/config/base_tmdb.dart';
+import 'package:cinex/core/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 class ImageHelper {

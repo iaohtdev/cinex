@@ -1,32 +1,33 @@
 import 'package:bloc/bloc.dart';
+import 'package:cinex/domain/repositories/repositories.dart';
 import 'package:cinex/presentation/cubits/cubits.dart';
-import 'package:cinex/core/model/models.dart';
-import 'package:cinex/domain/repository/repositories.dart';
-import 'package:cinex/utils/enum/genres_enum.dart';
-import 'package:cinex/utils/enum/sort_by_enum.dart';
+import 'package:cinex/data/models/models.dart';
+import 'package:cinex/domain/enum/genres_enum.dart';
+import 'package:cinex/domain/enum/sort_by_enum.dart';
 
 class DiscoverCubit extends Cubit<DiscoverState> {
-  DiscoverCubit() : super(DiscoverInitial());
+  DiscoverRepository discoverRepository;
+  DiscoverCubit(this.discoverRepository) : super(DiscoverInitial());
 
   Future<void> fetchMovieByQuery() async {
     try {
       emit(DiscoverLoading());
 
       final actionMoviesFuture =
-          DiscoverRepository.discover(genre: GenresType.action.id);
+          discoverRepository.discover(genre: GenresType.action.id);
       final adventureMoviesFuture =
-          DiscoverRepository.discover(genre: GenresType.anime.id);
+          discoverRepository.discover(genre: GenresType.anime.id);
       final comedyMoviesFuture =
-          DiscoverRepository.discover(genre: GenresType.comedy.id);
+          discoverRepository.discover(genre: GenresType.comedy.id);
       final horrorMoviesFuture =
-          DiscoverRepository.discover(genre: GenresType.horror.id);
+          discoverRepository.discover(genre: GenresType.horror.id);
       final dramaMoviesFuture =
-          DiscoverRepository.discover(genre: GenresType.drama.id);
+          discoverRepository.discover(genre: GenresType.drama.id);
       final thrillerMoviesFuture =
-          DiscoverRepository.discover(genre: GenresType.thriller.id);
-      final vnMovies = DiscoverRepository.discover(
+          discoverRepository.discover(genre: GenresType.thriller.id);
+      final vnMovies = discoverRepository.discover(
           sortBy: SortByType.popularity_desc.name, originalLanguage: 'vi');
-      final krMovies = DiscoverRepository.discover(originalLanguage: 'ko');
+      final krMovies = discoverRepository.discover(originalLanguage: 'ko');
 
       final List<List<MovieModel>> results = await Future.wait([
         actionMoviesFuture,

@@ -1,17 +1,18 @@
 import 'package:bloc/bloc.dart';
 import 'package:cinex/presentation/cubits/cubits.dart';
-import 'package:cinex/core/model/models.dart';
-import 'package:cinex/domain/repository/repositories.dart';
+import 'package:cinex/data/models/models.dart';
+import 'package:cinex/domain/repositories/repositories.dart';
 
 class SearchCubit extends Cubit<SearchState> {
-  SearchCubit() : super(SearchInitial());
+  SearchRepository searchRepository;
+  SearchCubit(this.searchRepository) : super(SearchInitial());
 
   Future<void> search({
     String? query,
   }) async {
     try {
       emit(SearchLoading());
-      final searchResponse = await SearchRepository.search(query: query);
+      final searchResponse = await searchRepository.search(query: query);
       List<MovieModel> movies = searchResponse['movies'];
       List<CastModel> casts = searchResponse['casts'];
       List<MovieModel> tv = searchResponse['tv'];

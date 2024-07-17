@@ -1,15 +1,16 @@
 import 'package:bloc/bloc.dart';
 import 'package:cinex/presentation/cubits/trailer/trailer_state.dart';
-import 'package:cinex/domain/repository/trailer_repository.dart';
+import 'package:cinex/domain/repositories/trailer_repository.dart';
 
 class TrailerCubit extends Cubit<TrailerState> {
-  TrailerCubit() : super(TrailerInitial());
+  TrailerRepository trailerRepository;
+  TrailerCubit(this.trailerRepository) : super(TrailerInitial());
 
   Future<void> fetchTrailer({required int id}) async {
     try {
       emit(TrailerLoading());
 
-      final Trailer = await TrailerRepository.fetchTrailer(id);
+      final Trailer = await trailerRepository.fetchTrailer(id);
 
       emit(TrailersLoaded(trailer: Trailer));
     } catch (e) {

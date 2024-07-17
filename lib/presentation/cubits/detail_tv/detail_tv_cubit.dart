@@ -1,17 +1,20 @@
+import 'package:cinex/domain/repositories/repositories.dart';
 import 'package:cinex/presentation/cubits/cubits.dart';
-import 'package:cinex/domain/repository/repositories.dart';
-import 'package:cinex/domain/repository/tv_repository.dart';
+import 'package:cinex/domain/repositories/tv_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DetailTVCubit extends Cubit<DetailTVState> {
-  DetailTVCubit() : super(DetailTVInitial());
+  TVRepository tvRepository;
+  CastRepository castRepository;
 
+  DetailTVCubit(this.castRepository, this.tvRepository)
+      : super(DetailTVInitial());
   Future<void> fetchDetail(int id) async {
     try {
       emit(DetailTVLoading());
-      final tv = await TVRepository.fetchDetailTV(id);
-      final similars = await TVRepository.fetchSimilar(id);
-      final casts = await CastRepository.fetchCastTV(id);
+      final tv = await tvRepository.fetchDetailTV(id);
+      final similars = await tvRepository.fetchSimilar(id);
+      final casts = await castRepository.fetchCastTV(id);
 
       emit(DetailTVsLoaded(tv: tv, casts: casts, similars: similars));
     } catch (e) {

@@ -1,4 +1,4 @@
-import 'package:cinex/core/model/tv_model.dart';
+import 'package:cinex/data/models/tv_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class TVState extends Equatable {

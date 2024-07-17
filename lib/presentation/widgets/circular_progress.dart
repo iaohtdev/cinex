@@ -1,5 +1,5 @@
-import 'package:cinex/core/shared/theme/app_color.dart';
-import 'package:cinex/utils/style/app_textstyle.dart';
+import 'package:cinex/core/theme/app_color.dart';
+import 'package:cinex/core/theme/app_textstyle.dart';
 import 'package:flutter/material.dart';
 
 class CircularProgressWithPercentage extends StatelessWidget {

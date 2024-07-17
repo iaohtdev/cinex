@@ -1,4 +1,4 @@
-import 'package:cinex/core/model/movie_model.dart';
+import 'package:cinex/data/models/movie_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class MoviesState extends Equatable {

@@ -1,4 +1,4 @@
-import 'package:cinex/core/shared/theme/app_color.dart';
+import 'package:cinex/core/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
