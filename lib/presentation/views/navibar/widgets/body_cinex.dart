@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:cinex/presentation/cubits/cubits.dart';
 import 'package:cinex/gen/assets.gen.dart';
 import 'package:cinex/presentation/views/home/home_screen.dart';
+import 'package:cinex/presentation/views/save_movie/save_movie_screen.dart';
 import 'package:cinex/presentation/views/search/search_screen.dart';
 import 'package:cinex/core/theme/app_color.dart';
 import 'package:cinex/presentation/widgets/custom_bottom_bar.dart';
@@ -37,7 +38,7 @@ class _BodyCineXState extends State<BodyCineX> {
   }
 
   void onButtonPressed(int index) {
-    context.read<NaviBarCubit>().updateIndex(index);
+    _naviBarCubit.updateIndex(index);
   }
 
   @override
@@ -52,9 +53,6 @@ class _BodyCineXState extends State<BodyCineX> {
                 child: PageView(
                   physics: const NeverScrollableScrollPhysics(),
                   controller: _pageController,
-                  onPageChanged: (index) {
-                    _naviBarCubit.updateIndex(index);
-                  },
                   children: lstPage,
                 ),
               ),
@@ -97,13 +95,6 @@ class _BodyCineXState extends State<BodyCineX> {
   List<Widget> lstPage = [
     const HomeScreen(),
     SearchScreen(),
-    Container(
-      alignment: Alignment.center,
-      child: const Icon(
-        Icons.bolt,
-        size: 56,
-        color: Colors.brown,
-      ),
-    ),
+    SaveMovieScreen()
   ];
 }

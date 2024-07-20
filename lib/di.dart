@@ -16,10 +16,15 @@ import 'package:cinex/domain/repositories/trailer_repository.dart';
 import 'package:cinex/domain/repositories/tv_repository.dart';
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 final GetIt getIt = GetIt.instance;
 
-void setupLocator() {
+void setupLocator() async {
+  // Initialize Hive
+  // await Hive.initFlutter();
+  // Hive.registerAdapter(ProductItemAdapter());
+  // final favoritesBox = await Hive.openBox<ProductItem>('favorites');
   getIt.registerLazySingleton<Dio>(() => Dio(
         DioConfig.options,
       ));

@@ -84,9 +84,6 @@ class $AssetsImagesGen {
   /// File path: assets/images/searching.svg
   String get searching => 'assets/images/searching.svg';
 
-  /// File path: assets/images/test.svg
-  String get test => 'assets/images/test.svg';
-
   /// File path: assets/images/welcome.png
   AssetGenImage get welcome => const AssetGenImage('assets/images/welcome.png');
 
@@ -100,7 +97,6 @@ class $AssetsImagesGen {
         poster1,
         poster2,
         searching,
-        test,
         welcome
       ];
 }

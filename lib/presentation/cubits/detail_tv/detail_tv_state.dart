@@ -2,7 +2,7 @@ import 'package:cinex/data/models/cast_model.dart';
 import 'package:cinex/data/models/tv_model.dart';
 import 'package:equatable/equatable.dart';
 
-sealed class DetailTVState extends Equatable {
+class DetailTVState extends Equatable {
   const DetailTVState();
 
   @override

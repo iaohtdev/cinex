@@ -3,15 +3,15 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-67.0.0",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-47.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.17"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/analyzer-6.4.1",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/analyzer-4.7.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.17"
     },
     {
       "name": "archive",
@@ -63,9 +63,9 @@
     },
     {
       "name": "build_resolvers",
-      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/build_resolvers-2.4.2",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/build_resolvers-2.0.10",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.17"
     },
     {
       "name": "build_runner",
@@ -75,9 +75,9 @@
     },
     {
       "name": "build_runner_core",
-      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/build_runner_core-7.3.1",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/build_runner_core-7.2.10",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "2.19"
     },
     {
       "name": "built_collection",
@@ -177,13 +177,19 @@
     },
     {
       "name": "dart_style",
-      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/dart_style-2.3.6",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/dart_style-2.2.4",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.17"
     },
     {
       "name": "dartx",
       "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/dartx-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "dartz",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/dartz-0.10.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -316,6 +322,24 @@
     {
       "name": "hashcodes",
       "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/hashcodes-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "hive",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/hive-2.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "hive_flutter",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/hive_flutter-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "hive_generator",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/hive_generator-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -570,6 +594,18 @@
       "rootUri": "file:///Users/iaohtdev/fvm/versions/3.13.9/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.2"
+    },
+    {
+      "name": "source_gen",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/source_gen-1.2.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "source_helper",
+      "rootUri": "file:///Users/iaohtdev/.pub-cache/hosted/pub.dev/source_helper-1.3.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "source_span",
@@ -830,7 +866,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-07-17T07:26:59.552860Z",
+  "generated": "2024-07-20T13:39:06.268101Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///Users/iaohtdev/fvm/versions/3.13.9",

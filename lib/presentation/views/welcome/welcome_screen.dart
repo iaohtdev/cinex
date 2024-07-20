@@ -72,8 +72,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border:
-                                  Border.all(color: Colors.black, width: 2)),
-                          child: const Icon(Icons.arrow_forward_ios_rounded)),
+                                  Border.all(color: Colors.white, width: 2)),
+                          child: const Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: Colors.white,
+                          )),
                     ),
                   ),
                   AppConstants.height20

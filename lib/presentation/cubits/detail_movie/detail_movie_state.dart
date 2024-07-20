@@ -2,7 +2,7 @@ import 'package:cinex/data/models/cast_model.dart';
 import 'package:cinex/data/models/movie_model.dart';
 import 'package:equatable/equatable.dart';
 
-sealed class DetailMovieState extends Equatable {
+class DetailMovieState extends Equatable {
   const DetailMovieState();
 
   @override

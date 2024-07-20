@@ -100,12 +100,6 @@ class TVModel {
     overview = json['overview'];
     popularity = json['popularity'];
     posterPath = json['poster_path'];
-    if (json['production_companies'] != null) {
-      productionCompanies = <ProductionCompanies>[];
-      json['production_companies'].forEach((v) {
-        productionCompanies!.add(new ProductionCompanies.fromJson(v));
-      });
-    }
 
     if (json['seasons'] != null) {
       seasons = <Seasons>[];
@@ -155,10 +149,6 @@ class TVModel {
     data['overview'] = this.overview;
     data['popularity'] = this.popularity;
     data['poster_path'] = this.posterPath;
-    if (this.productionCompanies != null) {
-      data['production_companies'] =
-          this.productionCompanies!.map((v) => v.toJson()).toList();
-    }
 
     if (this.seasons != null) {
       data['seasons'] = this.seasons!.map((v) => v.toJson()).toList();
